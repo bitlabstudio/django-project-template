@@ -40,7 +40,7 @@ git submodule init
 git submodule update
 
 # Now that the submodule exists, we can copy some symlinks
-cd myproject/myproject/static/css/libs/bootstrap
+cd $VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/css/libs/bootstrap
 ln -s ../../../../../submodules/bootstrap/less/* .
 cd ../../../../../../
 git add .
