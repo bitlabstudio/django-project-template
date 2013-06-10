@@ -1,0 +1,12 @@
+*.pyc
+*.wpr
+*.sql
+.ropeproject
+coverage/
+docs/build/
+docs/source/api/
+db.sqlite
+fab_settings.py
+local_settings.py
+locale
+*.dump

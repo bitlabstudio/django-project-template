@@ -1,0 +1,55 @@
+"""Local settings for the VAR_PROJECT_NAME project."""
+import os
+
+from .base_settings import DJANGO_PROJECT_ROOT
+
+
+DEBUG = True
+SANDBOX = True
+TEMPLATE_DEBUG = DEBUG
+
+# Needed by debug_toolbar. Set it to None to disable the toolbar.
+INTERNAL_IPS = ('127.0.0.1',)
+
+ADMINS = (
+    # ('Your Name', 'yourname@gmail.com'),
+)
+
+MANAGERS = ADMINS
+
+# First create your DB role like so:
+# > psql (connect as superuser)
+# > create database VAR_PROJECT_NAME;
+# > create user VAR_PROJECT_NAME with password 'VAR_PROJECT_NAME';
+# > grant all privileges on database VAR_PROJECT_NAME to VAR_PROJECT_NAME;
+
+# if you want to use geodjango:
+# > \connect VAR_PROJECT_NAME;
+# > create extension postgis;
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'VAR_PROJECT_NAME',
+        'USER': 'VAR_PROJECT_NAME',
+        'PASSWORD': 'VAR_PROJECT_NAME',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+# Hosts/domain names that are valid for this site; required if DEBUG is False
+# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = []
+
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/var/www/example.com/media/"
+MEDIA_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../VAR_PROJECT_NAME_media')
+
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/var/www/example.com/static/"
+STATIC_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../VAR_PROJECT_NAME_static')
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = 'http://www.miniwebtool.com/django-secret-key-generator/'
