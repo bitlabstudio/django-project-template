@@ -19,7 +19,7 @@ rm README.rst
 # project.
 for f in $(find . -type f | egrep "\.(py|txt|html|sample)$")
     do
-        sed -i "" "s#VAR_PROJECT_NAME#${VAR_PROJECT_NAME}#g" $f
+        sed -i "s#VAR_PROJECT_NAME#${VAR_PROJECT_NAME}#g" $f
     done
 
 # Now we rename the generic folder name into the correct project folder name
