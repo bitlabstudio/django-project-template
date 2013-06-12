@@ -1,4 +1,4 @@
-#!/Users/martin/Envs/django-project-template/bin/python
+#!/usr/bin/env python
 import os
 import sys
 
