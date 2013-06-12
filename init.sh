@@ -54,3 +54,4 @@ rm script-settings.sh
 cp $HOME/src/$VAR_PROJECT_NAME/scripts/script-settings.sh .
 cp $HOME/srv/$VAR_PROJECT_NAME/scripts/.pgpass $HOME
 chmod 600 $HOME/.pgpass
+mkdir -p $HOME/mylogs/cron
