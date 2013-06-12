@@ -99,13 +99,32 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+        'log_file':{
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(DJANGO_PROJECT_ROOT, 'debugger.log'),
+            'maxBytes': '16777216', # 16megabytes
+        },
     },
     'loggers': {
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
+        },
+
+        # For emergency logging on the server, add this into your code to
+        # generate log output in debugger.log:
+        #
+        # import logging
+        # logger = logging.getLogger('debugger')
+        # logger.debug('Some debug output')
+        #
+        'debugger': {
+            'handlers': ['log_file', ],
+            'level': 'DEBUG',
+            'propagate': False,
         },
     }
 }
