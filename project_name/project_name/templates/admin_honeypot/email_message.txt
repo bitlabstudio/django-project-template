@@ -1,0 +1,11 @@
+This is an automatic email to notify you that someone tried to login to the
+admin honeypot on {{ site.name }}:
+
+Username: {{ instance.username }}
+IP Address: {{ instance.ip_address }}
+Timestamp: {{ instance.timestamp }}
+
+http://{{ site.domain }}{% url "admin:admin_honeypot_loginattempt_change" instance.pk %}
+
+----
+django-admin-honeypot
