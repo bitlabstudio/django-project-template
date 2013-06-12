@@ -18,6 +18,7 @@ DB_ROLE = PROJECT_NAME
 DB_NAME = PROJECT_NAME
 DB_DUMP_FILENAME = '{0}.dump'.format(PROJECT_NAME)
 
+TEST_SETTINGS_PATH = 'VAR_PROJECT_NAME.settings.test_settings'
 
 # ============================================================================
 # Local settings
