@@ -53,3 +53,39 @@ STATIC_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../VAR_PROJECT_NAME_static')
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'http://www.miniwebtool.com/django-secret-key-generator/'
+
+
+EMAIL_BACKEND = 'mailer.backend.DbBackend'
+# ================================
+# Local Development Email Settings
+# ================================
+# MAILER_EMAIL_BACKEND = 'django_libs.test_email_backend.EmailBackend'
+# TEST_EMAIL_BACKEND_RECEPIENTS = ADMINS
+
+# FROM_EMAIL = ADMINS[0][1]
+# EMAIL_SUBJECT_PREFIX = '[dev VAR_PROJECT_NAME] '
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = FROM_EMAIL 
+# EMAIL_HOST_PASSWORD = "yourpassword"
+# EMAIL_PORT = 587
+
+
+# ==========================
+# Webfaction Server Settings
+# ==========================
+# FROM_EMAIL = "noreply@VAR_PROJECT_NAME.webfactional.com"
+# EMAIL_SUBJECT_PREFIX = '[VAR_PROJECT_NAME] '
+
+# EMAIL_HOST = 'smtp.webfaction.com'
+# EMAIL_HOST_USER = "VAR_PROJECT_NAME"
+# EMAIL_HOST_PASSWORD = "yourpassword"
+# EMAIL_PORT = 25
+
+
+# ===========================
+# More general email settings
+# ===========================
+# DEFAULT_FROM_EMAIL = FROM_EMAIL
+# SERVER_EMAIL = FROM_EMAIL
+# EMAIL_USE_TLS = True
