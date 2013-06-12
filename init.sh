@@ -2,7 +2,8 @@
 # The variable values here are just examples. Replace them all with real values
 # of your own app.
 
-# Your full name, will appear in AUTHORS, LICENSE and setup.py
+# Your django project name. Would be good if it is the same as your server
+# name. Will be part of folder names, so only use letters and underscore. 
 VAR_PROJECT_NAME='myproject'
 
 # ============================================================================
