@@ -29,7 +29,8 @@ if settings.DEBUG is False and settings.SANDBOX is True:
 
 urlpatterns += patterns(
     '',
-    url(r'^admin/', include(admin.site.urls)),
+    url(settings.ADMIN_URL, include(admin.site.urls)),
+    url(r'^admin-.+/', include('admin_honeypot.urls')),
     url(r'^p/(?P<template_path>.*)$',
         RapidPrototypingView.as_view(),
         name='prototype'),

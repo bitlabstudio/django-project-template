@@ -8,6 +8,12 @@ DEBUG = True
 SANDBOX = True
 TEMPLATE_DEBUG = DEBUG
 
+# For local development
+# ADMIN_URL = 'admin/'
+
+# For your server
+ADMIN_URL = 'admin-XXXX/'
+
 # Needed by debug_toolbar. Set it to None to disable the toolbar.
 INTERNAL_IPS = ('127.0.0.1',)
 
