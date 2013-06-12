@@ -10,10 +10,12 @@ DJANGO_APPS = [
 ]
 
 EXTERNAL_APPS = [
-    'south',
-    'django_libs',
+    'admin_honeypot',
     'debug_toolbar',
+    'django_libs',
+    'honeypot_signals',
     'mailer',
+    'south',
 ]
 
 INTERNAL_APPS = [
