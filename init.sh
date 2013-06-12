@@ -47,22 +47,24 @@ cd ../../../../../../
 git add .
 git commit -am "Added bootstrap submodule"
 
-# Symlinking the server scripts 
-mkdir -p $HOME/bin && cd $HOME/bin
-ln -s $HOME/src/$VAR_PROJECT_NAME/scripts/*.sh .
-rm script-settings.sh
-cp $HOME/src/$VAR_PROJECT_NAME/scripts/script-settings.sh .
-
 # Creating .pgpass in the $HOME folder
 # This allows you to run `psql -U <username>` without entering a password
 # Make sure to replace the db credentials in that file
-cp $HOME/srv/$VAR_PROJECT_NAME/scripts/.pgpass $HOME
+cp scripts/.pgpass $HOME
 chmod 600 $HOME/.pgpass
 
 # Creating the mylogs/cron folder
 mkdir -p $HOME/mylogs/cron
 
 # Copying local_settings.py so that we can do a first deployment
-cd $VAR_PROJECT_NAME/$VAR_PROJECT_NAME/settings
+cd $VAR_PROJECT_NAME/$VAR_PROJECT_NAME/settings/
 cp local_settings.py.sample local_settings.py
 cd ../../../
+
+# Symlinking the server scripts 
+mkdir -p $HOME/bin && cd $HOME/bin
+ln -s $HOME/src/$VAR_PROJECT_NAME/scripts/*.sh .
+rm script-settings.sh
+cp $HOME/src/$VAR_PROJECT_NAME/scripts/script-settings.sh .
+
+
