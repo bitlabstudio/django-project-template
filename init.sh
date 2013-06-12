@@ -46,5 +46,8 @@ cd ../../../../../../
 git add .
 git commit -am "Added bootstrap submodule"
 
-# And finally create our local_settings.py
-cp $VAR_PROJECT_NAME/$VAR_PROJECT_NAME/settings/local_settings.py.sample $VAR_PROJECT_NAME/$VAR_PROJECT_NAME/settings/local_settings.py 
+# We will symlink the server scripts 
+mkdir -p $HOME/bin && cd $HOME/bin
+ln -s $HOME/src/$VAR_PROJECT_NAME/scripts/*.sh .
+rm script-settings.sh
+cp $HOME/src/$VAR_PROJECT_NAME/scripts/script-settings.sh .
