@@ -1,0 +1,4 @@
+16,36,56 * * * * ~/webapps/pyconsg001_django/apache2/bin/start
+0 2 * * * $HOME/bin/pg-backup-wportal.sh > $HOME/mylogs/cron/pg-backup-wportal.log 2>&1
+0 2 * * * $HOME/bin/locale-backup-wportal.sh > $HOME/mylogs/cron/locale-backup-wportal.log 2>&1
+0 18 * * * $HOME/bin/django-cleanup-wportal.sh > $HOME/mylogs/cron/django-cleanup-wportal.log 2>&1
