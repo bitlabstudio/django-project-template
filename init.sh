@@ -66,3 +66,15 @@ mkdir -p $HOME/bin && cd $HOME/bin
 ln -s $HOME/src/$VAR_PROJECT_NAME/scripts/*.sh .
 rm script-settings.sh
 cp $HOME/src/$VAR_PROJECT_NAME/scripts/script-settings.sh .
+
+# Copying redirect scripts for https and www
+cd $HOME/webapps/$VAR_PROJECT_NAME_www
+rm index.html
+cp $HOME/src/$VAR_PROJECT_NAME/scripts/.htaccess_www .htaccess
+cd $HOME/webapps/$VAR_PROJECT_NAME_no_ssl
+rm index.html
+cp $HOME/src/$VAR_PROJECT_NAME/scripts/.htaccess_no_ssl .htaccess
+cd $HOME/webapps/$VAR_PROJECT_NAME_static
+rm index.html
+cd $HOME/webapps/$VAR_PROJECT_NAME_media
+rm index.html
