@@ -45,22 +45,22 @@ RSYNC_EXCLUDES = [
 # These are some paths that, by convention, you set on your servers.
 # You should keep them identical for all tiers (dev, stage, prod).
 SERVER_APACHE_BIN_DIR = '/home/{0}/webapps/{1}_django/apache2/bin/'.format(
-            LOGIN_USER, PROJECT_NAME)
+    LOGIN_USER, PROJECT_NAME)
 SERVER_REPO_ROOT = '/home/{0}/src/{1}/'.format(LOGIN_USER, PROJECT_NAME)
 
 # This must have no trailing slash because of rsync
 SERVER_REPO_PROJECT_ROOT = '{0}{1}'.format(SERVER_REPO_ROOT, PROJECT_NAME)
 SERVER_APP_ROOT = '/home/{0}/webapps/{1}_django/'.format(
-            LOGIN_USER, PROJECT_NAME)
+    LOGIN_USER, PROJECT_NAME)
 
 SERVER_PROJECT_ROOT = '{0}{1}/'.format(SERVER_APP_ROOT, PROJECT_NAME)
 SERVER_REQUIREMENTS_PATH = '{0}/requirements.txt'.format(
-            SERVER_REPO_PROJECT_ROOT)
+    SERVER_REPO_PROJECT_ROOT)
 
 SERVER_MEDIA_ROOT = '/home/{0}/webapps/{1}_media/'.format(
-            LOGIN_USER, PROJECT_NAME)
-SERVER_DB_BACKUP_DIR = '/home/{0}/backups/{1}/postgres/'.format(LOGIN_USER,
-            PROJECT_NAME)
+    LOGIN_USER, PROJECT_NAME)
+SERVER_DB_BACKUP_DIR = '/home/{0}/backups/{1}/postgres/'.format(
+    LOGIN_USER, PROJECT_NAME)
 SERVER_MEDIA_BACKUP_DIR = '/home/{0}/backups/media/'.format(LOGIN_USER)
 SERVER_WSGI_FILE = '{0}{1}/wsgi.py'.format(
-            SERVER_PROJECT_ROOT, PROJECT_NAME)
+    SERVER_PROJECT_ROOT, PROJECT_NAME)

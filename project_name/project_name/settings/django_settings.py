@@ -75,7 +75,8 @@ ROOT_URLCONF = 'VAR_PROJECT_NAME.urls'
 WSGI_APPLICATION = 'VAR_PROJECT_NAME.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates"
+    # or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(DJANGO_PROJECT_ROOT, 'VAR_PROJECT_NAME/templates')
@@ -100,11 +101,11 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-        'log_file':{
+        'log_file': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(DJANGO_PROJECT_ROOT, 'debugger.log'),
-            'maxBytes': '16777216', # 16megabytes
+            'maxBytes': '16777216',  # 16megabytes
         },
     },
     'loggers': {
