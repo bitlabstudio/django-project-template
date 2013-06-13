@@ -1,12 +1,13 @@
+*.dump
 *.pyc
-*.wpr
 *.sql
+*.wpr
 .ropeproject
 coverage/
+db.sqlite
+debugger.log
 docs/build/
 docs/source/api/
-db.sqlite
 fab_settings.py
 local_settings.py
 locale
-*.dump
