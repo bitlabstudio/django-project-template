@@ -1,0 +1,11 @@
+{% extends "proto/base.html" %}
+{% load i18n libs_tags %}
+
+{% block main %}
+Hello World!
+{% endblock %}
+
+{% block costs_footer %}
+    {% load_context "foobar.context.home_costs" %}
+    {% include "rapid_prototyping/costs.html" %}
+{% endblock %}

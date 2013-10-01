@@ -1,0 +1,26 @@
+{% extends "proto/base.html" %}
+{% load libs_tags rapid_prototyping_tags %}
+
+{% block main %}
+<h1>VAR_PROJECT_NAME Prototype</h1>
+<ul>
+    <li><a href="/p/proto/home.html">Landing Page</a></li>
+    {% comment %}Add links to all pages that are part of your prototype here{% endcomment %}
+</ul>
+{% endblock %}
+
+{% block costs_footer %}
+<table class="table table-bordered table-hover">
+    {% include "rapid_prototyping/costs_table_head.html" %}
+    <tbody>
+        {% load_context "foobar.context.home_costs" %}
+        {% include "rapid_prototyping/costs_table_body.html" %}
+        {% comment %}
+            Load context and include table body for all pages that are part of your prototype here
+            {% load_context "yourproject.context.search_results_costs" %}
+            {% include "rapid_prototyping/costs_table_body.html" %}
+        {% endcomment %}
+        {% include "rapid_prototyping/costs_total.html" %}
+    </tbody>
+</table>
+{% endblock %}
