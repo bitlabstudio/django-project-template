@@ -3,10 +3,12 @@
 # of your own app.
 
 # Your django project name. Would be good if it is the same as your server
-# name. Will be part of folder names, so only use letters and underscore. 
+# name. Will be part of folder names, so only use letters and underscore.
 VAR_PROJECT_NAME='myproject'
 
 # ============================================================================
+
+VAR_PROJECT_ROOT=`pwd`
 
 # We remove the .git repository because this should be the beginning of our new
 # project's repository.
@@ -36,16 +38,24 @@ git add .
 git commit -am "Initial commit"
 
 # We also need to add the Twitter Bootstrap submodule
-git submodule add git://github.com/twitter/bootstrap.git $VAR_PROJECT_NAME/submodules/bootstrap
+git submodule add git://github.com/twbs/bootstrap.git $VAR_PROJECT_NAME/submodules/bootstrap
+git submodule add git://github.com/jschr/bootstrap-modal/ $VAR_PROJECT_NAME/submodules/bootstrap-modal
+git submodule add git://github.com/tarruda/bootstrap-datetimepicker $VAR_PROJECT_NAME/submodules/bootstrap-datetimepicker
 git submodule init
 git submodule update
 
 # Now that the submodule exists, we can copy some symlinks
-cd $VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/css/libs/bootstrap
+cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/css/libs/bootstrap
 ln -s ../../../../../submodules/bootstrap/less/* .
-cd ../../../../../../
+cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/css/libs/
+ln -s ../../../../submodules/bootstrap-modal/css/bootstrap-modal.css .
+ln -s ../../../../submodules/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css .
+cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/js/libs/
+ln -s ../../../../submodules/bootstrap-modal/js/* .
+ln -s ../../../../submodules/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.in.js .
+cd $VAR_PROJECT_ROOT
 git add .
-git commit -am "Added bootstrap submodule"
+git commit -am "Added submodules"
 
 # Creating .pgpass in the $HOME folder
 # This allows you to run `psql -U <username>` without entering a password
@@ -57,9 +67,8 @@ chmod 600 $HOME/.pgpass
 mkdir -p $HOME/mylogs/cron
 
 # Copying local_settings.py so that we can do a first deployment
-cd $VAR_PROJECT_NAME/$VAR_PROJECT_NAME/settings/
+cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/settings/
 cp local_settings.py.sample local_settings.py
-cd ../../../
 
 # Symlinking the server scripts 
 mkdir -p $HOME/bin && cd $HOME/bin

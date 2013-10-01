@@ -6,6 +6,8 @@
     <title>{% block title %}VAR_PROJECT_NAME Prototype{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}css/libs/bootstrap-modal.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}css/libs/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -46,9 +48,33 @@
 </div>
 {% endblock %}
 
+<div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+{% comment %}Libs that are common and should be serverd via CDN and should not be compressed{% endcomment %}
 <script src="{{ STATIC_URL }}js/libs/jquery-1.9.1.js"></script>
 <script src="{{ STATIC_URL }}js/libs/jquery-ui-1.10.3.custom.min.js"></script>
+
+{% comment %}Libs that will change and should be compressed{% endcomment %}
 <script src="{{ STATIC_URL }}js/libs/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}js/libs/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ STATIC_URL }}js/libs/bootstrap-modal.js"></script>
+<script src="{{ STATIC_URL }}js/libs/bootstrap-modalmanager.js"></script>
+<script src="{{ STATIC_URL }}django_libs/js/modals.js"></script>
+<script src="{{ STATIC_URL }}js/libs/holder.js"></script>
+
+{% comment %}Extra js should not be compressed{% endcomment %}
 {% block extrajs %}{% endblock %}
+
+{% comment %}Global initialisations here. Should not be compressed{% endcomment %}
+<script>
+    $(document).ready(function() {
+        $('.hasPopover').popover({
+            placement: 'bottom'
+        });
+    });
+</script>
+
+{% comment %}Further initialisations on sub pages. Should not be compressed{% endcomment %}
+{% block extra_script %}{% endblock %}
 </body>
 </html>

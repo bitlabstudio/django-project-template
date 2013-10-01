@@ -67,6 +67,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django_libs.middleware.AjaxRedirectMiddleware',
 )
 
 ROOT_URLCONF = 'VAR_PROJECT_NAME.urls'

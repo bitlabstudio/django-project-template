@@ -1,26 +1,26 @@
-South==0.8.1
+South==0.8.2
 django-admin-honeypot==0.2.3
 django-honeypot-signals==0.1.1
-django-libs==1.6
-django==1.5.1
+django-libs==1.17
+django==1.5.4
 -e git+git://github.com/pinax/django-mailer.git@919805e25fc18b06487b25414d4e5d5e05a92108#egg=mailer
 
 
 # =============================================================================
 # Useful packages for local development
 # =============================================================================
-Fabric==1.5.1
-Pillow==1.7.8
+Fabric==1.8.0
+Pillow==2.1.0
 Sphinx==1.1.3
-coverage==3.5.2
-django-coverage==1.2.2
+coverage==3.6
+django-coverage==1.2.4
 django-debug-toolbar==0.9.4
-django-development-fabfile==0.6.2
-django-extensions==1.0.3
-django-nose==1.1
-factory_boy==1.3.0
-flake8==1.7.0
-ipdb==0.7
-ipython==0.13.1
+django-development-fabfile==0.9
+django-extensions==1.2.2
+django-nose==1.2
+factory_boy==2.2.1
+flake8==2.0
+ipdb==0.8
+ipython==1.1.0
 mock==1.0.1
-psycopg2==2.4.6
+psycopg2==2.5.1
