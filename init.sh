@@ -20,10 +20,8 @@ rm README.rst
 
 # In all relevant files, we replace some text so that it fits to our new
 # project.
-for f in $(find . -type f | egrep "\.(py|txt|html|sample)$")
-    do
-        sed -i "s#VAR_PROJECT_NAME#${VAR_PROJECT_NAME}#g" $f
-    done
+CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
+"${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_PROJECT_NAME#${VAR_PROJECT_NAME}#g"
 
 # Now we rename the generic folder name into the correct project folder name
 mv project_name/project_name project_name/$VAR_PROJECT_NAME
