@@ -50,7 +50,7 @@ ln -s ../../../../submodules/bootstrap-modal/css/bootstrap-modal.css .
 ln -s ../../../../submodules/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css .
 cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/js/libs/
 ln -s ../../../../submodules/bootstrap-modal/js/* .
-ln -s ../../../../submodules/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.in.js .
+ln -s ../../../../submodules/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js .
 cd $VAR_PROJECT_ROOT
 git add .
 git commit -am "Added submodules"
