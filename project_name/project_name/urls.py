@@ -38,3 +38,10 @@ urlpatterns += patterns(
         name='prototype'),
     url(r'^$', RedirectView.as_view(url='/p/proto/home.html')),
 )
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += patterns(
+        '',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )
