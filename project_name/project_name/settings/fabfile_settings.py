@@ -41,14 +41,13 @@ LOCAL_PG_ADMIN_ROLE = 'postgres'
 LOCAL_PG_USE_LOCALHOST = True
 LOCAL_COVERAGE_PATH = os.path.join(os.path.dirname(__file__), '../../coverage')
 
-
 # ============================================================================
 # Server settings
 # ============================================================================
 
 # This should be the name of your user that has sudo access on the server
-LOGIN_USER_DEV = None
-LOGIN_USER_STAGE = None
+LOGIN_USER_DEV = '{0}3'.format(PROJECT_NAME)
+LOGIN_USER_STAGE = '{0}2'.format(PROJECT_NAME)
 LOGIN_USER_PROD = PROJECT_NAME
 HOST_DEV = None
 HOST_STAGE = None
@@ -56,8 +55,8 @@ HOST_PROD = '{0}.webfactional.com'.format(LOGIN_USER_PROD)
 
 RSYNC_EXCLUDES = [
     'local_settings.py',
+    'circus.ini',
 ]
-
 
 # These are some paths that, by convention, you set on your servers.
 # You should keep them identical for all tiers (dev, stage, prod).
