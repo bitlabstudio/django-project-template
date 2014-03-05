@@ -1,19 +1,21 @@
-{% load i18n static %}
+{% load i18n compress static %}
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}VAR_PROJECT_NAME Prototype{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" media="screen">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <link href="{% static "css/libs/bootstrap-modal.css" %}" rel="stylesheet" media="screen">
-    <link href="{% static "css/libs/bootstrap-datetimepicker.min.css" %}" rel="stylesheet" media="screen">
-    <link href="{% static "css/libs/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" />
+    {% compress css %}
+        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" media="screen">
+        <style>
+          body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+          }
+        </style>
+        <link href="{% static "css/libs/bootstrap-modal.css" %}" rel="stylesheet" media="screen">
+        <link href="{% static "css/libs/bootstrap-datetimepicker.min.css" %}" rel="stylesheet" media="screen">
+        <link href="{% static "css/libs/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" />
+    {% endcompress %}
     {% block extrahead %}{% endblock %}
 </head>
 <body>
@@ -67,13 +69,16 @@
 <script src="{% static "js/libs/jquery-ui-1.10.3.custom.min.js" %}"></script>
 
 {% comment %}Libs that will change and should be compressed{% endcomment %}
-<script src="{% static "js/libs/bootstrap.min.js" %}"></script>
-<script src="{% static "js/libs/bootstrap-datetimepicker.min.js" %}"></script>
-<script src="{% static "js/libs/bootstrap-modal.js" %}"></script>
-<script src="{% static "js/libs/bootstrap-modalmanager.js" %}"></script>
-<script src="{% static "django_libs/js/modals.js" %}"></script>
-<script src="{% static "js/libs/holder.js" %}"></script>
-<script src="{% static "rapid_prototyping/js/calculate_total.js" %}></script>
+{% compress js %}
+    <script src="{% static "js/libs/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/libs/bootstrap-datetimepicker.min.js" %}"></script>
+    <script src="{% static "js/libs/bootstrap-modal.js" %}"></script>
+    <script src="{% static "js/libs/bootstrap-modalmanager.js" %}"></script>
+    <script src="{% static "django_libs/js/modals.js" %}"></script>
+    <script src="{% static "js/libs/holder.js" %}"></script>
+    <script src="{% static "rapid_prototyping/js/calculate_total.js" %}"></script>
+    <script src="{% static "js/libs/jquery.autogrow-textarea.js" %}"></script>
+{% endcompress %}
 
 {% comment %}Extra js should not be compressed{% endcomment %}
 {% block extrajs %}{% endblock %}
@@ -81,9 +86,13 @@
 {% comment %}Global initialisations here. Should not be compressed{% endcomment %}
 <script>
     $(document).ready(function() {
+        // Popovers
         $('.hasPopover').popover({
             placement: 'bottom'
         });
+
+        // Textarea auto-expand
+        $('textarea').css('overflow', 'hidden').autogrow();
     });
 </script>
 
