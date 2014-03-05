@@ -72,7 +72,7 @@ EMAIL_BACKEND = 'mailer.backend.DbBackend'
 # Local Development Email Settings
 # ================================
 # MAILER_EMAIL_BACKEND = 'django_libs.test_email_backend.EmailBackend'
-# TEST_EMAIL_BACKEND_RECEPIENTS = ADMINS
+# TEST_EMAIL_BACKEND_RECIPIENTS = ADMINS
 
 # FROM_EMAIL = ADMINS[0][1]
 # EMAIL_SUBJECT_PREFIX = '[dev VAR_PROJECT_NAME] '
