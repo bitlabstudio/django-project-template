@@ -8,6 +8,9 @@ DEBUG = True
 SANDBOX = True
 TEMPLATE_DEBUG = DEBUG
 
+# Enable/disable django compressor
+LOCAL_COMPRESS_ENABLED = False
+
 # For local development
 # ADMIN_URL = 'admin/'
 
