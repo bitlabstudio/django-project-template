@@ -71,6 +71,16 @@ MIDDLEWARE_CLASSES = (
     'django_libs.middleware.AjaxRedirectMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.messages.context_processors.messages',
+    'django_libs.context_processors.analytics',
+)
+
 ROOT_URLCONF = 'VAR_PROJECT_NAME.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
