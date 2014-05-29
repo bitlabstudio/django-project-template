@@ -8,7 +8,7 @@ This script has been created to accompany a 3.5 hour tutorial which was
 presented at PyCon Singapore 2013. You can find slides with step by step
 instructions here: https://speakerdeck.com/mbrochh/hosting-complex-web-applications-on-webfaction-servers
 
-* The project will be ready for test driven develpment
+* The project will be ready for test driven development
 * It has an extensive fabfile for automated deployments and continuous testing
 * It is structured and configured to be hosted on Webfaction servers
 * It uses a rapid prototyping view which allows your designers to start working
@@ -75,7 +75,7 @@ Finally create your ``local_settings.py``::
     vim local_settings.py
 
 Try ``./manage.py collectstatic`` to see if the static path is set correctly.
-Initiate your database with ``./manage.py syncdb --all`` and 
+Initiate your database with ``./manage.py syncdb --all`` and
 ``./manage.py migrate --fake``.
 
 You might want to create a .pgpass file, test the server scripts in the ``bin``
