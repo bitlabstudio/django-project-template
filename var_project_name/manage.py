@@ -4,7 +4,7 @@ import sys
 
 if __name__ == "__main__":
     os.environ.setdefault(
-        "DJANGO_SETTINGS_MODULE", "VAR_PROJECT_NAME.settings")
+        "DJANGO_SETTINGS_MODULE", "var_project_name.settings")
 
     from django.core.management import execute_from_command_line
 

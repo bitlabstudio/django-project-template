@@ -1,4 +1,4 @@
-"""Installed apps for the VAR_PROJECT_NAME project."""
+"""Installed apps for the ``var_project_name`` project."""
 DJANGO_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -21,7 +21,7 @@ EXTERNAL_APPS = [
 ]
 
 INTERNAL_APPS = [
-    'VAR_PROJECT_NAME',
+    'var_project_name',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS

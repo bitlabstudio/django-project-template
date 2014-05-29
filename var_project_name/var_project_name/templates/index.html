@@ -2,7 +2,7 @@
 {% load libs_tags rapid_prototyping_tags %}
 
 {% block main %}
-<h1>VAR_PROJECT_NAME Prototype</h1>
+<h1>var_project_name Prototype</h1>
 <ul>
     <li><a href="/p/proto/home.html">Landing Page</a></li>
     {% comment %}Add links to all pages that are part of your prototype here{% endcomment %}
@@ -13,7 +13,7 @@
 <table class="table table-bordered table-hover">
     {% include "rapid_prototyping/costs_table_head.html" %}
     <tbody>
-        {% load_context "VAR_PROJECT_NAME.context.home_costs" %}
+        {% load_context "var_project_name.context.home_costs" %}
         {% include "rapid_prototyping/costs_table_body.html" %}
         {% comment %}
             Load context and include table body for all pages that are part of your prototype here

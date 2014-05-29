@@ -1,4 +1,4 @@
-"""Local settings for the VAR_PROJECT_NAME project."""
+"""Local settings for the var_project_name project."""
 import os
 
 from .base_settings import DJANGO_PROJECT_ROOT
@@ -28,19 +28,19 @@ MANAGERS = ADMINS
 
 # First create your DB role like so:
 # > psql (connect as superuser)
-# > create database VAR_PROJECT_NAME;
-# > create user VAR_PROJECT_NAME with password 'VAR_PROJECT_NAME';
-# > grant all privileges on database VAR_PROJECT_NAME to VAR_PROJECT_NAME;
+# > create database var_project_name;
+# > create user var_project_name with password 'var_project_name';
+# > grant all privileges on database var_project_name to var_project_name;
 
 # if you want to use geodjango:
-# > \connect VAR_PROJECT_NAME;
+# > \connect var_project_name;
 # > create extension postgis;
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'VAR_PROJECT_NAME',
-        'USER': 'VAR_PROJECT_NAME',
-        'PASSWORD': 'VAR_PROJECT_NAME',
+        'NAME': 'var_project_name',
+        'USER': 'var_project_name',
+        'PASSWORD': 'var_project_name',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -55,13 +55,13 @@ ALLOWED_HOSTS = []
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../VAR_PROJECT_NAME_media')
+MEDIA_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../var_project_name_media')
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../VAR_PROJECT_NAME_static')
+STATIC_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../var_project_name_static')
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'http://www.miniwebtool.com/django-secret-key-generator/'
@@ -75,7 +75,7 @@ EMAIL_BACKEND = 'mailer.backend.DbBackend'
 # TEST_EMAIL_BACKEND_RECIPIENTS = ADMINS
 
 # FROM_EMAIL = ADMINS[0][1]
-# EMAIL_SUBJECT_PREFIX = '[dev VAR_PROJECT_NAME] '
+# EMAIL_SUBJECT_PREFIX = '[dev var_project_name] '
 
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_HOST_USER = FROM_EMAIL
@@ -86,11 +86,11 @@ EMAIL_BACKEND = 'mailer.backend.DbBackend'
 # ==========================
 # Webfaction Server Settings
 # ==========================
-# FROM_EMAIL = "noreply@VAR_PROJECT_NAME.webfactional.com"
-# EMAIL_SUBJECT_PREFIX = '[VAR_PROJECT_NAME] '
+# FROM_EMAIL = "noreply@var_project_name.webfactional.com"
+# EMAIL_SUBJECT_PREFIX = '[var_project_name] '
 
 # EMAIL_HOST = 'smtp.webfaction.com'
-# EMAIL_HOST_USER = "VAR_PROJECT_NAME"
+# EMAIL_HOST_USER = "var_project_name"
 # EMAIL_HOST_PASSWORD = "yourpassword"
 # EMAIL_PORT = 25
 

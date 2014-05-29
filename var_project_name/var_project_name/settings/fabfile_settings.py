@@ -8,10 +8,10 @@ from fabric.api import env
 # ============================================================================
 
 # This should be the folder name of your Django project
-PROJECT_NAME = 'VAR_PROJECT_NAME'
+PROJECT_NAME = 'var_project_name'
 
 # Path to your test_settings.py
-TEST_SETTINGS_PATH = 'VAR_PROJECT_NAME.settings.test_settings'
+TEST_SETTINGS_PATH = 'var_project_name.settings.test_settings'
 
 # This should be the name of the virtualenv on your local machine and on your
 # servers
@@ -57,6 +57,7 @@ RSYNC_EXCLUDES = [
     'local_settings.py',
     'circus.ini',
 ]
+
 
 # These are some paths that, by convention, you set on your servers.
 # You should keep them identical for all tiers (dev, stage, prod).

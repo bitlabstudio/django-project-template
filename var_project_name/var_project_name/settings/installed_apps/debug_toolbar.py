@@ -2,8 +2,9 @@
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': 'VAR_PROJECT_NAME.settings.installed_apps.debug_toolbar.show_toolbar',  # NOQA
+    'SHOW_TOOLBAR_CALLBACK': 'var_project_name.settings.installed_apps.debug_toolbar.show_toolbar',  # NOQA
 }
+
 
 def show_toolbar(request):
     return True

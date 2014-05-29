@@ -4,7 +4,7 @@
 
 # Your django project name. Would be good if it is the same as your server
 # name. Will be part of folder names, so only use letters and underscore.
-VAR_PROJECT_NAME='myproject'
+var_project_name='myproject'
 
 # ============================================================================
 
@@ -21,11 +21,11 @@ rm README.rst
 # In all relevant files, we replace some text so that it fits to our new
 # project.
 CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
-"${CMD[@]}" | xargs -0 perl -pi -e "s#VAR_PROJECT_NAME#${VAR_PROJECT_NAME}#g"
+"${CMD[@]}" | xargs -0 perl -pi -e "s#var_project_name#${var_project_name}#g"
 
 # Now we rename the generic folder name into the correct project folder name
-mv project_name/project_name project_name/$VAR_PROJECT_NAME
-mv project_name $VAR_PROJECT_NAME
+mv project_name/project_name project_name/$var_project_name
+mv project_name $var_project_name
 
 # And we remove this very script because we should only run it once anyways.
 rm init.sh
@@ -36,19 +36,19 @@ git add .
 git commit -am "Initial commit"
 
 # We also need to add the Twitter Bootstrap submodule
-git submodule add git://github.com/twbs/bootstrap.git $VAR_PROJECT_NAME/submodules/bootstrap
-git submodule add git://github.com/jschr/bootstrap-modal/ $VAR_PROJECT_NAME/submodules/bootstrap-modal
-git submodule add git://github.com/tarruda/bootstrap-datetimepicker $VAR_PROJECT_NAME/submodules/bootstrap-datetimepicker
+git submodule add git://github.com/twbs/bootstrap.git $var_project_name/submodules/bootstrap
+git submodule add git://github.com/jschr/bootstrap-modal/ $var_project_name/submodules/bootstrap-modal
+git submodule add git://github.com/tarruda/bootstrap-datetimepicker $var_project_name/submodules/bootstrap-datetimepicker
 git submodule init
 git submodule update
 
 # Now that the submodule exists, we can copy some symlinks
-cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/css/libs/bootstrap
+cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/css/libs/bootstrap
 ln -s ../../../../../submodules/bootstrap/less/* .
-cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/css/libs/
+cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/css/libs/
 ln -s ../../../../submodules/bootstrap-modal/css/bootstrap-modal.css .
 ln -s ../../../../submodules/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css .
-cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/static/js/libs/
+cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/js/libs/
 ln -s ../../../../submodules/bootstrap-modal/js/* .
 ln -s ../../../../submodules/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js .
 cd $VAR_PROJECT_ROOT
@@ -65,26 +65,26 @@ chmod 600 $HOME/.pgpass
 mkdir -p $HOME/mylogs/cron
 
 # Copying local_settings.py so that we can do a first deployment
-cd $VAR_PROJECT_ROOT/$VAR_PROJECT_NAME/$VAR_PROJECT_NAME/settings/
+cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/settings/
 cp local_settings.py.sample local_settings.py
 
-# Symlinking the server scripts 
+# Symlinking the server scripts
 mkdir -p $HOME/bin && cd $HOME/bin
-ln -s $HOME/src/$VAR_PROJECT_NAME/scripts/*.sh .
+ln -s $HOME/src/$var_project_name/scripts/*.sh .
 rm script-settings.sh
-cp $HOME/src/$VAR_PROJECT_NAME/scripts/script-settings.sh .
+cp $HOME/src/$var_project_name/scripts/script-settings.sh .
 
 # Copying redirect scripts for https and www
-DIR=$HOME'/webapps/'$VAR_PROJECT_NAME'_www'
+DIR=$HOME'/webapps/'$var_project_name'_www'
 cd $DIR
 rm index.html
-cp $HOME/src/$VAR_PROJECT_NAME/scripts/.htaccess_www .htaccess
+cp $HOME/src/$var_project_name/scripts/.htaccess_www .htaccess
 
-DIR=$HOME'/webapps/'$VAR_PROJECT_NAME'_no_ssl'
+DIR=$HOME'/webapps/'$var_project_name'_no_ssl'
 cd $DIR
 rm index.html
-cp $HOME/src/$VAR_PROJECT_NAME/scripts/.htaccess_no_ssl .htaccess
+cp $HOME/src/$var_project_name/scripts/.htaccess_no_ssl .htaccess
 
-DIR=$HOME'/webapps/'$VAR_PROJECT_NAME'_static'
+DIR=$HOME'/webapps/'$var_project_name'_static'
 cd $DIR
 rm index.html

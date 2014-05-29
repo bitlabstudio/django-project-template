@@ -2,6 +2,6 @@
 import os
 
 os.environ.setdefault(
-    "DJANGO_SETTINGS_MODULE", "VAR_PROJECT_NAME.settings")
+    "DJANGO_SETTINGS_MODULE", "var_project_name.settings")
 
 from development_fabfile.fabfile import *
