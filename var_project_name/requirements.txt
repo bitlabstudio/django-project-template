@@ -6,6 +6,7 @@ django-libs==1.50
 -e git+git://github.com/pinax/django-mailer.git@919805e25fc18b06487b25414d4e5d5e05a92108#egg=mailer
 django-rapid-prototyping==0.9
 django_compressor==1.4
+django-allauth==0.16.1
 
 # =============================================================================
 # Useful packages for local development
