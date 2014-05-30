@@ -24,8 +24,8 @@ CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
 "${CMD[@]}" | xargs -0 perl -pi -e "s#var_project_name#${var_project_name}#g"
 
 # Now we rename the generic folder name into the correct project folder name
-mv project_name/project_name project_name/$var_project_name
-mv project_name $var_project_name
+mv var_project_name/var_project_name var_project_name/$var_project_name
+mv var_project_name $var_project_name
 
 # And we remove this very script because we should only run it once anyways.
 rm init.sh
