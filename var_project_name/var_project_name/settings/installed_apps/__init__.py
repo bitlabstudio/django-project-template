@@ -70,6 +70,7 @@ EXTERNAL_APPS = [
     'debug_toolbar',
     'django_libs',
     'feedback_form',
+    'generic_positions',
     'honeypot_signals',
     'mailer',
     'rapid_prototyping',

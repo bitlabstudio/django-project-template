@@ -33,6 +33,7 @@ urlpatterns += patterns(
     url(settings.ADMIN_URL, include(admin.site.urls)),
     url(r'^admin-.+/', include('admin_honeypot.urls')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^pos/', include('generic_positions.urls')),
     url(r'^umedia/', include('user_media.urls')),
     url(r'^feedback/', include('feedback_form.urls')),
     url(r'^cms/', include('cms.urls')),
