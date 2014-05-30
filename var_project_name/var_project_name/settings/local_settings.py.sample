@@ -47,7 +47,7 @@ DATABASES = {
 }
 
 # Set this to your OS username if you are working with Postgres.app on OSX
-# LOCAL_PG_ADMIN_ROLE = 'martin'
+# LOCAL_PG_ADMIN_ROLE = 'username'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
