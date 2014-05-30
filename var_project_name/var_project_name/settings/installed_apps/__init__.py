@@ -6,6 +6,7 @@ DJANGO_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangocms_admin_style',  # Needs to be added before 'django.contrib.admin'
     'django.contrib.admin',
 ]
 
@@ -38,6 +39,31 @@ EXTERNAL_APPS = [
     # 'allauth.socialaccount.providers.vk',
     # 'allauth.socialaccount.providers.weibo',
 
+    # django-cms apps
+    # 'djangocms_file',
+    # 'djangocms_flash',
+    # 'djangocms_googlemap',
+    # 'djangocms_inherit',
+    # 'djangocms_picture',
+    # 'djangocms_teaser',
+    # 'djangocms_video',
+    # 'djangocms_link',
+    # 'djangocms_snippet',
+    'djangocms_text_ckeditor',
+    'cms',
+    'mptt',
+    'menus',
+    'sekizai',
+
+    # django-filer apps
+    'filer',
+    'easy_thumbnails',
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_video',
+
     'admin_honeypot',
     'compressor',
     'debug_toolbar',
@@ -55,6 +81,9 @@ INTERNAL_APPS = [
 INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 
 from .allauth import *  # NOQA
+from .cms import *  # NOQA
 from .compressor import *  # NOQA
-from .rapid_prototyping import *  # NOQA
 from .debug_toolbar import *  # NOQA
+from .easy_thumbnails import *  # NOQA
+from .rapid_prototyping import *  # NOQA
+from .south import *  # NOQA

@@ -1,4 +1,4 @@
-{% load i18n compress static %}
+{% load i18n compress static cms_tags sekizai_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -17,8 +17,10 @@
         <link href="{% static "css/libs/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" />
     {% endcompress %}
     {% block extrahead %}{% endblock %}
+    {% render_block "css" %}
 </head>
 <body>
+{% cms_toolbar %}
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
@@ -98,5 +100,6 @@
 
 {% comment %}Further initialisations on sub pages. Should not be compressed{% endcomment %}
 {% block extrascript %}{% endblock %}
+{% render_block "js" %}
 </body>
 </html>
