@@ -1,0 +1,4 @@
+{% load i18n %}
+<div class="alert alert-info">
+    {% blocktrans %}Confirmation e-mail sent to {{ email }}.{% endblocktrans %}
+</div>
