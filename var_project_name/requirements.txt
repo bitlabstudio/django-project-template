@@ -13,6 +13,7 @@ django-filer==0.9.5
 cmsplugin-filer==0.9.5
 django-user-media==0.11.1
 django-feedback-form==1.0
+bitmazk-contact-form==0.3.1
 
 # =============================================================================
 # Useful packages for local development

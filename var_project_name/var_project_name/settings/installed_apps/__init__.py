@@ -66,6 +66,7 @@ EXTERNAL_APPS = [
 
     'admin_honeypot',
     'compressor',
+    'contact_form',
     'debug_toolbar',
     'django_libs',
     'feedback_form',
@@ -85,6 +86,7 @@ INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 from .allauth import *  # NOQA
 from .cms import *  # NOQA
 from .compressor import *  # NOQA
+from .contact_form import *  # NOQA
 from .debug_toolbar import *  # NOQA
 from .easy_thumbnails import *  # NOQA
 from .rapid_prototyping import *  # NOQA
