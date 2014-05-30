@@ -21,7 +21,7 @@
         <div class="alert alert-danger">{{ form.non_field_errors }}</div>
     {% endif %}
     {% for field in form %}
-        {% include "partials/form_field.html" %}
+        {% include "django_libs/partials/form_field.html" %}
     {% endfor %}
     {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
