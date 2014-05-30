@@ -98,6 +98,6 @@ EMAIL_BACKEND = 'mailer.backend.DbBackend'
 # ===========================
 # More general email settings
 # ===========================
-# DEFAULT_FROM_EMAIL = FROM_EMAIL
-# SERVER_EMAIL = FROM_EMAIL
-# EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = FROM_EMAIL
+SERVER_EMAIL = FROM_EMAIL
+EMAIL_USE_TLS = True

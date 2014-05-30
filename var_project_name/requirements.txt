@@ -11,6 +11,8 @@ django-cms==3.0.2
 djangocms-text-ckeditor==2.1.4
 django-filer==0.9.5
 cmsplugin-filer==0.9.5
+django-user-media==0.11.1
+django-feedback-form==1.0
 
 # =============================================================================
 # Useful packages for local development

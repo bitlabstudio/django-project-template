@@ -1,4 +1,4 @@
-{% load i18n compress static cms_tags sekizai_tags %}
+{% load i18n compress static cms_tags sekizai_tags feedback_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -15,12 +15,16 @@
         <link href="{% static "css/libs/bootstrap-modal.css" %}" rel="stylesheet" media="screen">
         <link href="{% static "css/libs/bootstrap-datetimepicker.min.css" %}" rel="stylesheet" media="screen">
         <link href="{% static "css/libs/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" />
+        <link href="{% static "user_media/css/libs/jquery.fileupload-ui.css" %}" rel="stylesheet" media="screen">
+        <link href="{% static "user_media/css/libs/jquery.Jcrop.css" %}" rel="stylesheet" media="screen">
+        <link href="{% static "feedback_form/css/feedback_form.css" %}" type="text/css" media="all" rel="stylesheet" />
     {% endcompress %}
     {% block extrahead %}{% endblock %}
     {% render_block "css" %}
 </head>
 <body>
 {% cms_toolbar %}
+{% feedback_form %}
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
@@ -80,6 +84,10 @@
     <script src="{% static "js/libs/holder.js" %}"></script>
     <script src="{% static "rapid_prototyping/js/calculate_total.js" %}"></script>
     <script src="{% static "js/libs/jquery.autogrow-textarea.js" %}"></script>
+    {% include "user_media/partials/image_upload_scripts.html" %}
+    <script src="{% static "django_libs/js/getcookie.js" %}"></script>
+    <script src="{% static "user_media/js/libs/jquery.Jcrop.js" %}"></script>
+    <script type="text/javascript" src="{% static "feedback_form/js/feedback_form.js" %}"></script>
 {% endcompress %}
 
 {% comment %}Extra js should not be compressed{% endcomment %}

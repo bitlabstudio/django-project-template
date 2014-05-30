@@ -68,10 +68,12 @@ EXTERNAL_APPS = [
     'compressor',
     'debug_toolbar',
     'django_libs',
+    'feedback_form',
     'honeypot_signals',
     'mailer',
-    'south',
     'rapid_prototyping',
+    'south',
+    'user_media',
 ]
 
 INTERNAL_APPS = [
@@ -87,3 +89,4 @@ from .debug_toolbar import *  # NOQA
 from .easy_thumbnails import *  # NOQA
 from .rapid_prototyping import *  # NOQA
 from .south import *  # NOQA
+from .user_media import *  # NOQA
