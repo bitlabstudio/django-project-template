@@ -1,0 +1,38 @@
+#warning-script, #warning-old-browser {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+#warning-script > div, #warning-old-browser > div {
+    position: absolute;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+#warning-script a, #warning-script p, #warning-old-browser a, #warning-old-browser p {
+    color: #c83025;
+}
+#warning-script a, #warning-old-browser a {
+    text-decoration: underline;
+}
+#warning-script .warning-close, #warning-old-browser .warning-close {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#warning-old-browser > div {
+    background: #fff;
+    top: 0;
+    padding: 10px 30%;
+}
+
+#warning-script {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+#warning-script > div {
+    top: 48%;
+    padding: 0 30%;
+}

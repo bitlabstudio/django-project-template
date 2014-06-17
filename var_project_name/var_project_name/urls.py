@@ -6,7 +6,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import RedirectView
 
-from django_libs.views import RapidPrototypingView
+from django_libs.views import RapidPrototypingView, UpdateSessionAJAXView
 
 
 admin.autodiscover()
@@ -37,6 +37,8 @@ urlpatterns += patterns(
     url(r'^umedia/', include('user_media.urls')),
     url(r'^feedback/', include('feedback_form.urls')),
     url(r'^cms/', include('cms.urls')),
+    url(r'^update-session/$', UpdateSessionAJAXView.as_view(),
+        name='update_session'),
     url(r'^p/', include('rapid_prototyping.urls')),
     url(r'^p/(?P<template_path>.*)$',
         RapidPrototypingView.as_view(),

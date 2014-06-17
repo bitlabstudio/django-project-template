@@ -19,6 +19,7 @@
         <link href="{% static "user_media/css/libs/jquery.Jcrop.css" %}" rel="stylesheet" media="screen">
         <link href="{% static "feedback_form/css/feedback_form.css" %}" type="text/css" media="all" rel="stylesheet" />
         <link href="{% static "contact_form/css/contact_form.css" %}" type="text/css" media="all" rel="stylesheet" />
+        <link href="{% static "css/warnings.css" %}" rel="stylesheet" media="screen">
     {% endcompress %}
     {% block extrahead %}{% endblock %}
     {% render_block "css" %}
@@ -26,6 +27,21 @@
 <body>
 {% cms_toolbar %}
 {% feedback_form %}
+{% if not request.session.hide_warning %}
+    <div id="warning-old-browser" style="display: none;">
+        <div>
+            <span class="warning-close" data-url="{% url "update_session" %}">&times;</span>
+            <p>{% trans "Your browser is too old and not able to display this website the right way. If you are using the Internet Explorer, please switch to another browser. Please update your browser to the latest version or download <a href='https://www.google.com/intl/de/chrome/browser/'>Google Chrome</a> or <a href='http://www.mozilla.org/de/firefox/new/'>Mozilla Firefox</a>." %}</p>
+        </div>
+    </div>
+{% endif %}
+<noscript>
+    <div id="warning-script">
+        <div>
+            <p>{% trans "You have disabled JavaScript. Please enable JavaScript." %}</p>
+        </div>
+    </div>
+</noscript>
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
@@ -89,6 +105,7 @@
     <script src="{% static "django_libs/js/getcookie.js" %}"></script>
     <script src="{% static "user_media/js/libs/jquery.Jcrop.js" %}"></script>
     <script type="text/javascript" src="{% static "feedback_form/js/feedback_form.js" %}"></script>
+    <script src="{% static "js/warnings.js" %}"></script>
 {% endcompress %}
 
 {% comment %}Extra js should not be compressed{% endcomment %}
