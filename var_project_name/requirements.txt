@@ -15,6 +15,7 @@ django-user-media==0.11.1
 django-feedback-form==1.0
 bitmazk-contact-form==0.3.1
 django-generic-positions==0.1.6
+raven==5.0.0
 simplejson==3.5.2
 
 # =============================================================================
