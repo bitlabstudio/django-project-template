@@ -37,7 +37,7 @@ git commit -am "Initial commit"
 
 # We also need to add the Twitter Bootstrap submodule
 git submodule add git://github.com/twbs/bootstrap.git $var_project_name/submodules/bootstrap
-git submodule add git://github.com/jschr/bootstrap-modal/ $var_project_name/submodules/bootstrap-modal
+git submodule add git://github.com/bitmazk/bootstrap3-modal/ $var_project_name/submodules/bootstrap3-modal
 git submodule add git://github.com/tarruda/bootstrap-datetimepicker $var_project_name/submodules/bootstrap-datetimepicker
 git submodule init
 git submodule update
@@ -46,10 +46,10 @@ git submodule update
 cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/css/libs/bootstrap
 ln -s ../../../../../submodules/bootstrap/less/* .
 cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/css/libs/
-ln -s ../../../../submodules/bootstrap-modal/css/bootstrap-modal.css .
+ln -s ../../../../submodules/bootstrap3-modal/css/bootstrap3-modal.css .
 ln -s ../../../../submodules/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css .
 cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/js/libs/
-ln -s ../../../../submodules/bootstrap-modal/js/* .
+ln -s ../../../../submodules/bootstrap3-modal/js/* .
 ln -s ../../../../submodules/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js .
 cd $VAR_PROJECT_ROOT
 git add .
