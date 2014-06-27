@@ -1,26 +1,26 @@
-function init_carousel(selector) {
+function init_carousel(elements) {
     // Carousel
-    selector.carousel({
+    elements.carousel({
         interval: 7000
     });
 }
 
-function init_popover(selector) {
+function init_popover(elements) {
     // Popover
-    selector.popover({
+    elements.popover({
         placement: 'bottom'
         ,trigger: 'hover'
     });
 }
 
-function init_textarea(selector) {
+function init_textarea(elements) {
     // Textarea auto-expand
-    selector.css('overflow', 'hidden').autogrow();
+    elements.css('overflow', 'hidden').autogrow();
 }
 
-function init_tooltip(selector) {
+function init_tooltip(elements) {
     // Tooltip
-    selector.tooltip({
+    elements.tooltip({
         placement: 'bottom'
     });
 }
