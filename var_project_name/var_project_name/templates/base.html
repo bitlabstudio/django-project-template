@@ -24,6 +24,13 @@
     {% block extrahead %}{% endblock %}
     {% render_block "css" %}
 
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+    <!-- https://developer.apple.com/library/safari/documentation/appleapplications/reference/safariwebcontent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+    <link rel="apple-touch-icon" href="{% static "touch-icon-iphone.png" %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static "touch-icon-ipad.png" %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static "touch-icon-iphone-retina.png" %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static "touch-icon-ipad-retina.png" %}">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="{% static "js/libs/html5shiv.js" %}"></script>
