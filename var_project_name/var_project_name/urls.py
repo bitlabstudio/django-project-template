@@ -8,6 +8,8 @@ from django.views.generic import RedirectView
 
 from django_libs.views import RapidPrototypingView, UpdateSessionAJAXView
 
+from .views import AJAXnonAJAXLoginView
+
 
 admin.autodiscover()
 
@@ -32,6 +34,8 @@ urlpatterns += patterns(
     '',
     url(settings.ADMIN_URL, include(admin.site.urls)),
     url(r'^admin-.+/', include('admin_honeypot.urls')),
+    url(r'^accounts/login/$', AJAXnonAJAXLoginView.as_view(),
+        name='account_login'),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^pos/', include('generic_positions.urls')),
     url(r'^umedia/', include('user_media.urls')),
