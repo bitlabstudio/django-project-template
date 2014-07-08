@@ -8,8 +8,9 @@ DEBUG = True
 SANDBOX = True
 TEMPLATE_DEBUG = DEBUG
 
-# Disable getsentry.com when working locally, if you use it at all
-# DISABLED_APPS = ['raven', ]
+# Disable getsentry.com when working locally
+# On the server, just set this to `[]` in order to enable raven
+DISABLED_APPS = ['raven', ]
 
 # This has to be in local settings because we have two servers with different
 # API keys for getsentry

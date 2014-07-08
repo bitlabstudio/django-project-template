@@ -77,7 +77,7 @@ EXTERNAL_APPS = [
     'rapid_prototyping',
     'south',
     'user_media',
-    # 'raven.contrib.django.raven_compat',
+    'raven.contrib.django.raven_compat',
 ]
 
 INTERNAL_APPS = [
