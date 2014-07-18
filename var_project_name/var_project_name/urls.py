@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import RedirectView
 
+from cms.sitemaps import CMSSitemap
 from django_libs.views import RapidPrototypingView, UpdateSessionAJAXView
 
 from .views import AJAXnonAJAXLoginView
@@ -32,6 +33,11 @@ if settings.DEBUG is False and settings.SANDBOX is True:
 
 urlpatterns += patterns(
     '',
+    url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {
+        'sitemaps': {
+            'cms': CMSSitemap,
+        },
+    }),
     url(settings.ADMIN_URL, include(admin.site.urls)),
     url(r'^admin-.+/', include('admin_honeypot.urls')),
     url(r'^accounts/login/$', AJAXnonAJAXLoginView.as_view(),
