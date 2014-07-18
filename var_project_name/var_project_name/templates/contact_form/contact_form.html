@@ -4,7 +4,7 @@
     {% if success %}
         {% include "contact_form/contact_form_success.html" %}
     {% endif %}
-    <form method="post">
+    <form method="post" action=".">
         {% include "django_libs/partials/form.html" %}
         <input class="btn btn-success" type="submit" value="{{ form.submit_button_value }}" />
     </form>
