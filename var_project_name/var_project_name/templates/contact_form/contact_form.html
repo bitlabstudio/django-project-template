@@ -5,10 +5,7 @@
         {% include "contact_form/contact_form_success.html" %}
     {% endif %}
     <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            {% include "django_libs/partials/form_field.html" %}
-        {% endfor %}
+        {% include "django_libs/partials/form.html" %}
         <input class="btn btn-success" type="submit" value="{{ form.submit_button_value }}" />
     </form>
 {% endblock %}
