@@ -14,7 +14,7 @@ DISABLED_APPS = ['raven', ]
 
 # This has to be in local settings because we have two servers with different
 # API keys for getsentry
-if not 'raven' in DISABLED_APPS:
+if 'raven' not in DISABLED_APPS:
     RAVEN_CONFIG = {
         'dsn': 'https://XXX@app.getsentry.com/XXX',
     }
