@@ -126,19 +126,6 @@
 {% comment %}Extra js should not be compressed{% endcomment %}
 {% block extrajs %}{% endblock %}
 
-{% comment %}Global initialisations here. Should not be compressed{% endcomment %}
-<script>
-    $(document).ready(function() {
-        // Popovers
-        $('.hasPopover').popover({
-            placement: 'bottom'
-        });
-
-        // Textarea auto-expand
-        $('textarea').css('overflow', 'hidden').autogrow();
-    });
-</script>
-
 {% comment %}Further initialisations on sub pages. Should not be compressed{% endcomment %}
 {% block extrascript %}{% endblock %}
 {% render_block "js" %}
