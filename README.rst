@@ -80,3 +80,9 @@ Initiate your database with ``./manage.py syncdb --all`` and
 
 You might want to create a .pgpass file, test the server scripts in the ``bin``
 folder and add a crontab (example can be found in ``scripts/crontab.txt``).
+The scripts in the ``scripts`` folder are useful for:
+
+* creating backups of the database, media files and translation files
+* cleaning Django's session table
+* sending emails queued by django-mailer
+* restarting apache
