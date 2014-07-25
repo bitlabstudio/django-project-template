@@ -38,6 +38,7 @@ urlpatterns += patterns(
             'cms': CMSSitemap,
         },
     }),
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', {}),
     url(settings.ADMIN_URL, include(admin.site.urls)),
     url(r'^admin-.+/', include('admin_honeypot.urls')),
     url(r'^accounts/login/$', AJAXnonAJAXLoginView.as_view(),
