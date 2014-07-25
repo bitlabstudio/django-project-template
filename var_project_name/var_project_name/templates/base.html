@@ -102,9 +102,10 @@
 
 <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
 
-{% comment %}Libs that are common and should be serverd via CDN and should not be compressed{% endcomment %}
+{% comment %}Libs that are common and should be served via CDN and should not be compressed{% endcomment %}
 <script src="{% static "js/libs/jquery-1.9.1.js" %}"></script>
 <script src="{% static "js/libs/jquery-ui-1.10.3.custom.min.js" %}"></script>
+<script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
 
 {% comment %}Libs that will change and should be compressed{% endcomment %}
 {% compress js %}
