@@ -11,3 +11,4 @@ docs/source/api/
 fab_settings.py
 local_settings.py
 locale
+submodules/
