@@ -1,6 +1,6 @@
-MAIFROM=noreply@<username>.webfactional.com
+MAIFROM=noreply@var_username.webfactional.com
 MAILTO=yourmail@example.com
-16,36,56 * * * * ~/webapps/<username>_django/apache2/bin/start
+16,36,56 * * * * ~/webapps/var_project_name_django/apache2/bin/start
 0 2 * * * $HOME/bin/pg-backup.sh > $HOME/mylogs/cron/pg-backup.log 2>&1
 0 2 * * * $HOME/bin/locale-backup.sh > $HOME/mylogs/cron/locale-backup.log 2>&1
 0 18 * * * $HOME/bin/django-cleanup.sh > $HOME/mylogs/cron/django-cleanup.log 2>&1

@@ -5,6 +5,7 @@
 # Your django project name. Would be good if it is the same as your server
 # name. Will be part of folder names, so only use letters and underscore.
 var_project_name='myproject'
+var_username='myproject'
 
 # ============================================================================
 
@@ -22,6 +23,10 @@ rm README.rst
 # project.
 CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
 "${CMD[@]}" | xargs -0 perl -pi -e "s#var_project_name#${var_project_name}#g"
+
+CMD=(find . -type f \( ! -iname '*.pyc' ! -iname 'init.sh' \) -print0)
+"${CMD[@]}" | xargs -0 perl -pi -e "s#var_username#${var_username}#g"
+
 
 # Now we rename the generic folder name into the correct project folder name
 mv var_project_name/var_project_name var_project_name/$var_project_name
