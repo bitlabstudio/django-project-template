@@ -56,9 +56,11 @@ ln -s ../../../../submodules/bootstrap-datetimepicker/build/css/bootstrap-dateti
 cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/js/libs/
 ln -s ../../../../submodules/bootstrap3-modal/js/* .
 ln -s ../../../../submodules/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js .
+cd $VAR_PROJECT_ROOT/$var_project_name/$var_project_name/static/css/
+lessc bootstrap.less bootstrap.css
 cd $VAR_PROJECT_ROOT
 git add .
-git commit -am "Added submodules"
+git commit -am "Added submodules & compiled bootstrap.less"
 
 # Creating .pgpass in the $HOME folder
 # This allows you to run `psql -U <username>` without entering a password
