@@ -7,7 +7,8 @@ DEBUG_TOOLBAR_CONFIG = {
 
 
 def show_toolbar(request):
-    return True
+    from django.conf import settings
+    return settings.DEBUG
 
 
 def hide_toolbar(request):
