@@ -95,4 +95,4 @@ from .easy_thumbnails import *  # NOQA
 from .rapid_prototyping import *  # NOQA
 from .south import *  # NOQA
 from .user_media import *  # NOQA
-# from .raven import *  # NOQA
+from .raven import *  # NOQA
