@@ -1,0 +1,32 @@
+/* Useful styles that we need in almost every project */
+body {
+    padding-top: 60px;
+}
+
+.form-group {
+    input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea, select {
+        .form-control;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+// see http://stackoverflow.com/a/10568318
+.navbar-center .nav,
+.navbar-center .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+
+.navbar-center .navbar-inner {
+    text-align:center;
+}
