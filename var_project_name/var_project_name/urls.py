@@ -12,7 +12,7 @@ from django_libs.views import RapidPrototypingView, UpdateSessionAJAXView
 from .views import AJAXnonAJAXLoginView
 
 
-LOGOUT_REDIRECT_URL = getattr(settings, 'LOGOUT_REDIRECT_URL', '/')
+LOGOUT_REDIRECT_URL = getattr(settings, 'ACCOUNT_LOGOUT_REDIRECT_URL', '/')
 
 admin.autodiscover()
 
