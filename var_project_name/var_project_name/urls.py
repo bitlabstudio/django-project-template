@@ -12,6 +12,8 @@ from django_libs.views import RapidPrototypingView, UpdateSessionAJAXView
 from .views import AJAXnonAJAXLoginView
 
 
+LOGOUT_REDIRECT_URL = getattr(settings, 'LOGOUT_REDIRECT_URL', '/')
+
 admin.autodiscover()
 
 urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -43,6 +45,8 @@ urlpatterns += patterns(
     url(r'^admin-.+/', include('admin_honeypot.urls')),
     url(r'^accounts/login/$', AJAXnonAJAXLoginView.as_view(),
         name='account_login'),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout',
+        {'next_page': LOGOUT_REDIRECT_URL}, name='account_logout'),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^pos/', include('generic_positions.urls')),
     url(r'^umedia/', include('user_media.urls')),
