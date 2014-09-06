@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% load cms_tags %}
 
-{% block head_title %}{% page_attribute "title" %}{% endblock %}
+{% block head_title %}
+    {% page_attribute "page_title" as page_title %}
+    {% if page_title %}
+        {{ page_title }}
+    {% else %}
+        {% page_attribute "title" %}
+    {% endif %}
+{% endblock %}
 
 {% block main %}
 <h1>{% page_attribute "title" %}</h1>
