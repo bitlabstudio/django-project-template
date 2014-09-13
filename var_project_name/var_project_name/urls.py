@@ -60,14 +60,3 @@ urlpatterns += patterns(
         name='prototype'),
     url(r'^$', RedirectView.as_view(url='/p/proto/home.html')),
 )
-
-# NOTE: If you encounter problems with debug toolbar e.g. 404 Not Found when
-# opening the tabs, remove these urls and also remove the
-# ``DEBUG_TOOLBAR_PATCH_SETTINGS = False`` setting from
-# ``installed_apps/debug_toolbar.py``
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += patterns(
-        '',
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    )
