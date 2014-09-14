@@ -1,0 +1,16 @@
+{% load i18n %}
+{% if not request.session.hide_warning %}
+    <div id="warning-old-browser" style="display: none;">
+        <div>
+            <span class="warning-close" data-url="{% url "update_session" %}">&times;</span>
+            <p>{% trans "Your browser is too old and not able to display this website the right way. If you are using the Internet Explorer, please switch to another browser. Please update your browser to the latest version or download <a href='https://www.google.com/intl/de/chrome/browser/'>Google Chrome</a> or <a href='http://www.mozilla.org/de/firefox/new/'>Mozilla Firefox</a>." %}</p>
+        </div>
+    </div>
+{% endif %}
+<noscript>
+    <div id="warning-script">
+        <div>
+            <p>{% trans "You have disabled JavaScript. Please enable JavaScript." %}</p>
+        </div>
+    </div>
+</noscript>
