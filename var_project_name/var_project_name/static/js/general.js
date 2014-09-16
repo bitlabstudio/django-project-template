@@ -1,3 +1,17 @@
+function get_screen_size() {
+    // Returns the current screen size in Bootstrap 3 terms
+    var envValues = ['xs', 'sm', 'md', 'lg'];
+    var $el = $('<div></div>');
+    $el.appendTo($('body'));
+    for (var i = envValues.length - 1; i >= 0; i--) {
+        $el.addClass('hidden-'+envValues[i]);
+        if ($el.is(':hidden')) {
+            $el.remove();
+            return envValues[i]
+        }
+    };
+}
+
 function init_carousel(elements) {
     // Carousel
     elements.carousel({
