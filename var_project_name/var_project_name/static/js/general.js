@@ -9,7 +9,7 @@ function get_screen_size() {
         $el.addClass('hidden-'+envValues[i]);
         if ($el.is(':hidden')) {
             $el.remove();
-            return envValues[i]
+            return envValues[i];
         }
     };
 }
