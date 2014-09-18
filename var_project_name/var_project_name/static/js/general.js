@@ -1,5 +1,7 @@
 function get_screen_size() {
     // Returns the current screen size in Bootstrap 3 terms
+    // See http://stackoverflow.com/a/19462847
+    //
     var envValues = ['xs', 'sm', 'md', 'lg'];
     var $el = $('<div></div>');
     $el.appendTo($('body'));
