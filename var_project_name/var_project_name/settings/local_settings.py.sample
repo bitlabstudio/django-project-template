@@ -8,18 +8,7 @@ DEBUG = True
 SANDBOX = True
 TEMPLATE_DEBUG = DEBUG
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'http'
-
-# Disable getsentry.com when working locally
-# On the server, just set this to `[]` in order to enable raven
-DISABLED_APPS = ['raven', ]
-
-# This has to be in local settings because we have two servers with different
-# API keys for getsentry
-if 'raven' not in DISABLED_APPS:
-    RAVEN_CONFIG = {
-        'dsn': 'https://XXX@app.getsentry.com/XXX',
-    }
-
+DISABLED_APPS = []
 
 # Enable/disable django compressor
 LOCAL_COMPRESS_ENABLED = False

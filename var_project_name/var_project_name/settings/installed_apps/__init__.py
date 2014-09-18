@@ -77,7 +77,6 @@ EXTERNAL_APPS = [
     'rapid_prototyping',
     'south',
     'user_media',
-    'raven.contrib.django.raven_compat',
 ]
 
 INTERNAL_APPS = [
@@ -95,4 +94,3 @@ from .easy_thumbnails import *  # NOQA
 from .rapid_prototyping import *  # NOQA
 from .south import *  # NOQA
 from .user_media import *  # NOQA
-from .raven import *  # NOQA

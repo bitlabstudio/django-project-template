@@ -81,7 +81,6 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
-    'django_libs.middleware.CustomSentry404CatchMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
