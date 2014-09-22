@@ -1,8 +1,14 @@
 """Django settings for the ``var_project_name`` project."""
 import os
 
+from django_libs.settings.django_settings import \
+    IGNORABLE_404_URLS as LIBS_IGNORABLE_404_URLS
+
 from .base_settings import DJANGO_PROJECT_ROOT
 
+
+SEND_BROKEN_LINK_EMAILS = True
+IGNORABLE_404_URLS = LIBS_IGNORABLE_404_URLS
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -69,6 +75,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
