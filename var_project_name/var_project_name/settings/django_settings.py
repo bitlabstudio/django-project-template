@@ -7,7 +7,6 @@ from django_libs.settings.django_settings import \
 from .base_settings import DJANGO_PROJECT_ROOT
 
 
-SEND_BROKEN_LINK_EMAILS = True
 IGNORABLE_404_URLS = LIBS_IGNORABLE_404_URLS
 
 # Local time zone for this installation. Choices can be found here:
@@ -132,7 +131,7 @@ LOGGING = {
     },
     'handlers': {
         'mail_admins': {
-            'level': 'ERROR',
+            'level': 'WARNING',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
@@ -146,7 +145,7 @@ LOGGING = {
     'loggers': {
         'django.request': {
             'handlers': ['mail_admins'],
-            'level': 'ERROR',
+            'level': 'WARNING',
             'propagate': True,
         },
 
