@@ -130,12 +130,19 @@ LOGGING = {
         },
         'filter_ignorable_404_urls': {
             '()': 'django_libs.utils_log.FilterIgnorable404URLs'
-        }
+        },
+        'add_current_user': {
+            '()': 'django_libs.utils_log.AddCurrentUser'
+        },
     },
     'handlers': {
         'mail_admins': {
             'level': 'WARNING',
-            'filters': ['require_debug_false', 'filter_ignorable_404_urls'],
+            'filters': [
+                'require_debug_false',
+                'filter_ignorable_404_urls',
+                'add_current_user',
+            ],
             'class': 'django.utils.log.AdminEmailHandler'
         },
         'log_file': {
