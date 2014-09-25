@@ -127,12 +127,15 @@ LOGGING = {
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'filter_ignorable_404_urls': {
+            '()': 'django_libs.utils_log.FilterIgnorable404URLs'
         }
     },
     'handlers': {
         'mail_admins': {
             'level': 'WARNING',
-            'filters': ['require_debug_false'],
+            'filters': ['require_debug_false', 'filter_ignorable_404_urls'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
         'log_file': {
