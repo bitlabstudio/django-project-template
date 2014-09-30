@@ -1,8 +1,8 @@
 """Django settings for the ``var_project_name`` project."""
 import os
 
-from django_libs.settings.django_settings import \
-    IGNORABLE_404_URLS as LIBS_IGNORABLE_404_URLS
+from django_libs.settings.django_settings import IGNORABLE_404_URLS as LIBS_IGNORABLE_404_URLS  # NOQA
+from django_libs.settings.django_settings import IGNORABLE_404_USER_AGENTS  # NOQA
 
 from .base_settings import DJANGO_PROJECT_ROOT
 
