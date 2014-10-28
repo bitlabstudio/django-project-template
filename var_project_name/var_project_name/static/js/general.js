@@ -46,7 +46,8 @@ $(document).ready(function() {
     init_popover($('[data-class="popover"]'));
     init_tooltip($('[data-class="tooltip"]'));
     init_textarea($('textarea'));
-    init_carousel($('[data-class="carousel"]'));
+    // Use this in in the template that has a carousel slider
+    // init_carousel($('[data-class="carousel"]'));
 });
 
 // If objects are added to the DOM after document ready.
