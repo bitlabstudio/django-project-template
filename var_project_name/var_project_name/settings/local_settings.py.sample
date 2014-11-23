@@ -10,6 +10,9 @@ TEMPLATE_DEBUG = DEBUG
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'http'
 DISABLED_APPS = []
 
+# Set this to false on PROD / works with `grunt watch` on local development.
+LIVERELOAD = True
+
 # Enable/disable django compressor
 LOCAL_COMPRESS_ENABLED = False
 

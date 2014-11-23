@@ -115,5 +115,9 @@
 
 {% comment %}Further initialisations on sub pages. Should not be compressed{% endcomment %}
 {% block extrascript %}{% endblock %}
+
+{% if LIVERELOAD %}
+    <script src="//localhost:35729/livereload.js"></script>
+{% endif %}
 </body>
 </html>

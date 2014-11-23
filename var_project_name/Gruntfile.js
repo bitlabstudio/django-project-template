@@ -1,3 +1,6 @@
+// Install npm, then `cd` into this directory and run `npm install`.
+// Then start the watcher with `grunt watch`
+//
 module.exports = function(grunt) {
     grunt.initConfig({
         less: {

@@ -101,6 +101,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'allauth.socialaccount.context_processors.socialaccount',
     'sekizai.context_processors.sekizai',
     'cms.context_processors.cms_settings',
+    'var_project_name.context_processors.project_settings',
 )
 
 ROOT_URLCONF = 'var_project_name.urls'
