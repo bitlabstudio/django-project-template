@@ -4,7 +4,7 @@
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "E-mail Addresses" %}</h1>
+<h1>{% trans "E-mail addresses" %}</h1>
 {% if user.emailaddress_set.all %}
     <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
     <form action="{% url 'account_email' %}" method="post">
@@ -22,21 +22,21 @@
                     {% if emailaddress.primary %}<span>{% trans "Primary" %}</span>{% endif %}
                 </label>
             {% endfor %}
-            <button class="btn btn-default" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-            <button class="btn btn-default" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-            <button class="btn btn-default" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+            <button class="btn btn-primary" type="submit" name="action_primary" >{% trans 'Make primary' %}</button>
+            <button class="btn btn-info" type="submit" name="action_send" >{% trans 'Re-send verification' %}</button>
+            <button class="btn btn-danger" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
         </fieldset>
     </form>
 {% else %}
     <p><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
 {% endif %}
-<h2>{% trans "Add E-mail Address" %}</h2>
+<h2>{% trans "Add e-mail address" %}</h2>
 <form method="post" action="{% url 'account_email' %}" class="add_email">
     {% csrf_token %}
     {% for field in form %}
         {% include "django_libs/partials/form_field.html" %}
     {% endfor %}
-    <button name="action_add" class="btn btn-default" type="submit">{% trans "Add E-mail" %}</button>
+    <button name="action_add" class="btn btn-default" type="submit">{% trans "Add e-mail" %}</button>
 </form>
 {% endblock %}
 
