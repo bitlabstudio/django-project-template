@@ -1,3 +1,4 @@
+// jshint ignore: start
 if((function() {
     var t,u,i,j,
         css='textShadow,boxShadow,borderRadius,opacity'.split(','),
@@ -30,3 +31,4 @@ $(document).ready(function() {
         });
     });
 });
+// jshint ignore: end

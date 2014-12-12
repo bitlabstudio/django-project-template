@@ -1,3 +1,4 @@
+/*jshint unused: false*/
 function get_screen_size() {
     // Returns the current screen size in Bootstrap 3 terms
     // See http://stackoverflow.com/a/19462847
@@ -11,8 +12,9 @@ function get_screen_size() {
             $el.remove();
             return envValues[i];
         }
-    };
+    }
 }
+/*jshint unused: true*/
 
 function init_carousel(elements) {
     // Carousel
@@ -24,8 +26,8 @@ function init_carousel(elements) {
 function init_popover(elements) {
     // Popover
     elements.popover({
-        placement: 'bottom'
-        ,trigger: 'hover'
+        placement: 'bottom',
+        trigger: 'hover'
     });
 }
 
