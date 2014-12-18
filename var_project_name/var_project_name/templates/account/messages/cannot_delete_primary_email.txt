@@ -1,4 +1,4 @@
 {% load i18n %}
 <div class="alert alert-info">
-    {% blocktrans %}You cannot remove your primary e-mail address ({{email}}).{% endblocktrans %}
+    {% blocktrans %}You cannot remove your primary email address ({{email}}).{% endblocktrans %}
 </div>

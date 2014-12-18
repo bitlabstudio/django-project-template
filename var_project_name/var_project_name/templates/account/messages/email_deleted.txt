@@ -1,4 +1,4 @@
 {% load i18n %}
 <div class="alert alert-info">
-    {% blocktrans %}Removed e-mail address {{ email }}.{% endblocktrans %}
+    {% blocktrans %}Removed email address {{ email }}.{% endblocktrans %}
 </div>
