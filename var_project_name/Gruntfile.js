@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                 options: {
                     paths: ["var_project_name/static/css"],
                 },
-                files: {"var_project_name/static/css/bootstrap.css": "var_project_name/static/css/bootstrap.less"},
+                files: {"var_project_name/static/css/bootstrap.css": "var_project_name/static/css/bootstrap.less"}
             }
         },
         watch: {
@@ -18,10 +18,16 @@ module.exports = function(grunt) {
                 options: {
                     // Start a live reload server on the default port 35729
                     livereload: true,
-                    livereloadOnError: false,
-                },
+                    livereloadOnError: false
+                }
             },
-        },
+            html: {
+                files: ['**/*.html'],
+                options: {
+                    livereload: true
+                }
+            }
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
