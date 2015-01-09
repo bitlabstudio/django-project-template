@@ -43,11 +43,72 @@ function init_tooltip(elements) {
     });
 }
 
+function init_spinner(elements) {
+    // Spinner
+	elements.spin({
+		lines: 11
+		,length: 5
+		,width: 4
+		,radius: 10
+		,corners: 1.0
+		,rotate:0
+		,trail: 62
+		,speed: 1.0
+		,direction: 1
+	});
+}
+
+function init_form(form) {
+    if (!form.find('[data-class="spinner"]').length) form.prepend('<div class="spinner" data-class="spinner"></div>');
+	form.change(function() {
+		if (form.find('input[type=file]').length) {
+			var input, file;
+
+			// (Can't use `typeof FileReader === "function"` because apparently
+			// it comes back as "object" on some browsers. So just see if it's there
+			// at all.)
+			if (!window.FileReader) {
+				$('<div class="alert alert-danger">' + gettext("The file API isn't supported on this browser yet.") + '</alert>').insertAfter(input);
+				return;
+			}
+
+			input = form.find('input[type=file]');
+			if (!input[0].files) {
+				$('<div class="alert alert-danger">' + gettext("This browser doesn't seem to support the 'files' property of file inputs.") + '</div>').insertAfter(input);
+			}
+			else if (!input[0].files[0]) {
+				input.parents('div').find('.alert').remove();
+			}
+			else {
+				file = input[0].files[0];
+				// 5MB -> 5120KB -> 5242880
+				if (file.size > 5242880) {
+					$('<div class="alert alert-danger">' + gettext('The file is too large. Please select a smaller image (< 5mb).') + '</div>').insertAfter(input);
+					input[0].parentNode.replaceChild(
+						input[0].cloneNode(true),
+						input[0]
+					);
+				} else {
+					input.parents('div').find('.alert').remove();
+				}
+			}
+		}
+	});
+    form.submit(function() {
+        form.find('[data-class="spinner"]').show();
+    });
+	init_spinner($('[data-class="spinner"]'));
+}
+
 // Document loaded and ready.
 $(document).ready(function() {
     init_popover($('[data-class="popover"]'));
     init_tooltip($('[data-class="tooltip"]'));
     init_textarea($('textarea'));
+	init_spinner($('[data-class="spinner"]'));
+	$('form').each(function() {
+		init_form($(this));
+	});
     // Use this in in the template that has a carousel slider
     // init_carousel($('[data-class="carousel"]'));
 });
@@ -57,5 +118,9 @@ $(document).on('DOMNodeInserted', function(e) {
     init_popover($(e.target).find('[data-class="popover"]'));
     init_tooltip($(e.target).find('[data-class="tooltip"]'));
     init_textarea($(e.target).find('textarea'));
+	init_spinner($(e.target).find('[data-class="spinner"]'));
+	$(e.target).find('form').each(function() {
+		init_form($(this));
+	});
     init_carousel($(e.target).find('[data-class="carousel"]'));
 });
