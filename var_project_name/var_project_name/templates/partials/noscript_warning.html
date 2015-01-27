@@ -1,4 +1,5 @@
 {% load i18n %}
+{% comment %}
 {% if not request.session.hide_warning %}
     <div id="warning-old-browser" style="display: none;">
         <div>
@@ -7,6 +8,7 @@
         </div>
     </div>
 {% endif %}
+{% endcomment %}
 <noscript>
     <div id="warning-script">
         <div>
