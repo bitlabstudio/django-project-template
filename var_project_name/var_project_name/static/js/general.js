@@ -36,6 +36,20 @@ function init_textarea(elements) {
     elements.css('overflow', 'hidden').autogrow();
 }
 
+function init_tabs() {
+    // show active tab on reload
+    if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
+
+    // remember the hash in the URL without jumping
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+        if(history.pushState) {
+            history.pushState(null, null, '#'+$(e.target).attr('href').substr(1));
+        } else {
+            location.hash = '#'+$(e.target).attr('href').substr(1);
+        }
+    });
+}
+
 function init_tooltip(elements) {
     // Tooltip
     elements.tooltip({
@@ -103,6 +117,7 @@ function init_form(form) {
 // Document loaded and ready.
 $(document).ready(function() {
     init_popover($('[data-class="popover"]'));
+    init_tabs();
     init_tooltip($('[data-class="tooltip"]'));
     init_textarea($('textarea'));
 	init_spinner($('[data-class="spinner"]'));
