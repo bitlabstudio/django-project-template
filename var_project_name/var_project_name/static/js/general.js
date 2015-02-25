@@ -26,9 +26,10 @@ function init_carousel(elements) {
 function init_popover(elements) {
     // Popover
     elements.popover({
-        placement: 'bottom',
-        trigger: 'hover'
-    });
+        placement: 'top'
+        ,trigger: 'hover'
+        ,html: true
+    }).css('cursor', 'pointer');
 }
 
 function init_textarea(elements) {
