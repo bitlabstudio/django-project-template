@@ -7,7 +7,7 @@ django-libs==1.64
 django-rapid-prototyping==0.9
 django_compressor==1.4
 django-allauth==0.16.1
-django-cms==3.0.2
+django-cms==3.0.12
 djangocms-text-ckeditor==2.1.4
 django-filer==0.9.5
 cmsplugin-filer==0.9.5
