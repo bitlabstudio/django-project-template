@@ -1,6 +1,6 @@
 #!/bin/bash
 source $HOME/bin/script-settings.sh
-BACKUPFOLDER=$HOME'/backups/'$VENV_NAME'/postgres'
+BACKUPFOLDER=$DB_BACKUP_PATH
 mkdir -p $BACKUPFOLDER
 
 KEEP=30

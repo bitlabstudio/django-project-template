@@ -1,6 +1,6 @@
 #!/bin/bash
 source $HOME/bin/script-settings.sh
-BACKUPFOLDER=$HOME'/backups/'$VENV_NAME'/locale'
+BACKUPFOLDER=$LOCALE_BACKUP_FOLDER
 mkdir -p $BACKUPFOLDER
 
 KEEP=30
@@ -13,6 +13,6 @@ done
 
 DATE=`date +%Y%m%d%H%M%S`
 rm -f $BACKUPFOLDER/.locale-${DATE}.tgz_INPROGRESS
-tar -cvzpf $BACKUPFOLDER/.locale-${DATE}.tgz_INPROGRESS ~/webapps/$DJANGO_APP_NAME/$PROJECTNAME/locale
+tar -cvzpf $BACKUPFOLDER/.locale-${DATE}.tgz_INPROGRESS $DJANGO_APP_PATH/locale
 mv -f $BACKUPFOLDER/.locale-${DATE}.tgz_INPROGRESS $BACKUPFOLDER/locale-${DATE}.tgz
 exit 0

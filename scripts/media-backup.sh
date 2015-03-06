@@ -1,6 +1,6 @@
 #!/bin/bash
 source $HOME/bin/script-settings.sh
-BACKUPFOLDER=$HOME'/backups/'$VENV_NAME'/media'
+BACKUPFOLDER=$MEDIA_BACKUP_PATH
 mkdir -p $BACKUPFOLDER
 
 KEEP=30
@@ -13,6 +13,6 @@ done
 
 DATE=`date +%Y%m%d%H%M%S`
 rm -f $BACKUPFOLDER/.media-${DATE}.tgz_INPROGRESS
-tar -cvzpf $BACKUPFOLDER/.media-${DATE}.tgz_INPROGRESS ~/webapps/$MEDIA_APP_NAME/
+tar -cvzpf $BACKUPFOLDER/.media-${DATE}.tgz_INPROGRESS $MEDIA_ROOT/
 mv -f $BACKUPFOLDER/.media-${DATE}.tgz_INPROGRESS $BACKUPFOLDER/media-${DATE}.tgz
 exit 0
