@@ -33,7 +33,7 @@ COMPILEMESSAGES_ON_DEPLOYMENT = False
 # Add other code snippets you want to be found. Add a file type to the dict and
 # define a regex, which should be processed
 SYNTAX_CHECK = {
-    '*.js': '(console.log|alert)',
+    '*.js': '(console.log\(\)|alert\(\))',
 }
 # Add files or directories to exclude in the syntax check
 SYNTAX_CHECK_EXCLUDES = [
