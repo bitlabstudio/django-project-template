@@ -114,7 +114,7 @@ TEMPLATE_DIRS = (
     # or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(DJANGO_PROJECT_ROOT, 'var_project_name/templates')
+    os.path.join(DJANGO_PROJECT_ROOT, 'var_project_name/templates'),
 )
 
 # A sample logging configuration. The only tangible logging
@@ -173,4 +173,16 @@ LOGGING = {
             'propagate': False,
         },
     }
+}
+
+# A dictionary specifying the package where migration modules can be found
+MIGRATION_MODULES = {
+    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
+    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
+    'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
+    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
+    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
+    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
+    'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
+    'filer': 'filer.migrations_django',
 }

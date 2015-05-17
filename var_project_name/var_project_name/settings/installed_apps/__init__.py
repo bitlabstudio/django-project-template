@@ -54,6 +54,7 @@ EXTERNAL_APPS = [
     'mptt',
     'menus',
     'sekizai',
+    'treebeard',
 
     # django-filer apps
     'filer',
@@ -75,7 +76,6 @@ EXTERNAL_APPS = [
     'honeypot_signals',
     'mailer',
     'rapid_prototyping',
-    'south',
     'user_media',
 ]
 
@@ -92,5 +92,4 @@ from .contact_form import *  # NOQA
 from .debug_toolbar import *  # NOQA
 from .easy_thumbnails import *  # NOQA
 from .rapid_prototyping import *  # NOQA
-from .south import *  # NOQA
 from .user_media import *  # NOQA

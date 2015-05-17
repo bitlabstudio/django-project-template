@@ -26,7 +26,6 @@ PASSWORD_HASHERS = (
 
 EMAIL_SUBJECT_PREFIX = '[test var_project_name] '
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
-SOUTH_TESTS_MIGRATE = False
 
 
 TEST_RUNNER = 'django_libs.testrunner.NoseCoverageTestRunner'
