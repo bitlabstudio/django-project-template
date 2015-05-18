@@ -41,6 +41,11 @@ SYNTAX_CHECK_EXCLUDES = [
     'static/js/libs/',
 ]
 
+# Those files/dirs will be excluded in the coverage report
+COVERAGE_EXCLUDES = (
+    '*__init__*,*manage*,*wsgi*,*urls*,*/settings/*,*/migrations/*,*/tests/*,'
+    '*admin*')
+
 
 # ============================================================================
 # Local settings
