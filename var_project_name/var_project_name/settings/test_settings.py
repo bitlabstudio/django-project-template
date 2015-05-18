@@ -36,3 +36,12 @@ COVERAGE_MODULE_EXCLUDES = [
 COVERAGE_MODULE_EXCLUDES += EXTERNAL_APPS
 COVERAGE_MODULE_EXCLUDES += DJANGO_APPS
 COVERAGE_REPORT_HTML_OUTPUT_DIR = "coverage"
+
+class DisableMigrations(object):
+    def __contains__(self, item):
+        return True
+
+    def __getitem__(self, item):
+        return "notmigrations"
+
+MIGRATION_MODULES = DisableMigrations()
