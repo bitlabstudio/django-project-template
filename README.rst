@@ -11,9 +11,6 @@ instructions here: https://speakerdeck.com/mbrochh/hosting-complex-web-applicati
 * The project will be ready for test driven development
 * It has an extensive fabfile for automated deployments and continuous testing
 * It is structured and configured to be hosted on Webfaction servers
-* It uses a rapid prototyping view which allows your designers to start working
-  on the new project immediately, even though no urls, models or views have
-  been implemented, yet
 
 Usage
 =====

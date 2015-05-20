@@ -75,7 +75,6 @@ EXTERNAL_APPS = [
     'generic_positions',
     'honeypot_signals',
     'mailer',
-    'rapid_prototyping',
     'user_media',
 ]
 
@@ -91,5 +90,4 @@ from .compressor import *  # NOQA
 from .contact_form import *  # NOQA
 from .debug_toolbar import *  # NOQA
 from .easy_thumbnails import *  # NOQA
-from .rapid_prototyping import *  # NOQA
 from .user_media import *  # NOQA

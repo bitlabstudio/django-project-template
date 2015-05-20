@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.generic import RedirectView
+from django.views.generic import TemplateView
 
 from cms.sitemaps import CMSSitemap
 from django_libs.views import RapidPrototypingView, UpdateSessionAJAXView
@@ -32,7 +32,7 @@ if settings.DEBUG is False and settings.SANDBOX is True:
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
             {'document_root': settings.MEDIA_ROOT}),
     )
-    
+
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns += patterns('',
@@ -60,9 +60,5 @@ urlpatterns += patterns(
     url(r'^cms/', include('cms.urls')),
     url(r'^update-session/$', UpdateSessionAJAXView.as_view(),
         name='update_session'),
-    url(r'^p/', include('rapid_prototyping.urls')),
-    url(r'^p/(?P<template_path>.*)$',
-        RapidPrototypingView.as_view(),
-        name='prototype'),
-    url(r'^$', RedirectView.as_view(url='/p/proto/home.html')),
+    url(r'^$', TemplateView.as_view(template_name='base.html')),
 )

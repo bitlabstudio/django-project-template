@@ -3,7 +3,6 @@ django-admin-honeypot==0.4.0
 django-honeypot-signals==0.1.1
 django-libs==1.66.1
 -e git+git://github.com/pinax/django-mailer.git@919805e25fc18b06487b25414d4e5d5e05a92108#egg=mailer
-django-rapid-prototyping==0.9
 django_compressor==1.5
 django-allauth==0.19.1
 django-cms==3.1.0
