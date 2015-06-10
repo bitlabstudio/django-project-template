@@ -3,6 +3,7 @@
 *.sql
 *.wpr
 .ropeproject
+.coverage
 coverage/
 db.sqlite
 debugger.log
