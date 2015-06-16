@@ -1,9 +1,9 @@
 MAILFROM=noreply@var_project_name.com
 MAILTO=yourmail@example.com
-16,36,56 * * * * ~/webapps/ninetyminutefilm_django/apache2/bin/start
-0 2 * * * $HOME/bin/pg-backup.sh > $HOME/mylogs/cron/pg-backup.log 2>&1
-0 2 * * * $HOME/bin/locale-backup.sh > $HOME/mylogs/cron/locale-backup.log 2>&1
-0 18 * * * $HOME/bin/django-cleanup.sh > $HOME/mylogs/cron/django-cleanup.log 2>&1
-* * * * * $HOME/bin/django-send-email.sh > $HOME/mylogs/cron/django-send-email.log 2>&1
-*/10 * * * * $HOME/bin/django-retry-deferred.sh > $HOME/mylogs/cron/django-retry-deferred.log 2>&1
-0 4 * * 4 $HOME/bin/django-cleanup-mailer-messagelog.sh > $HOME/mylogs/cron/django-cleanup-mailer-messagelog.log 2>&1
+*/5 * * * * PATH=/usr/local/bin /usr/local/bin/supervisord -c /home/django/etc/supervisord.conf > /home/django/log/supervisor/crontab.log 2>&1
+0 2 * * * $HOME/bin/pg-backup.sh > $HOME/log/cron/pg-backup.log 2>&1
+0 2 * * * $HOME/bin/locale-backup.sh > $HOME/log/cron/locale-backup.log 2>&1
+0 18 * * * $HOME/bin/django-cleanup.sh > $HOME/log/cron/django-cleanup.log 2>&1
+* * * * * $HOME/bin/django-send-email.sh > $HOME/log/cron/django-send-email.log 2>&1
+*/10 * * * * $HOME/bin/django-retry-deferred.sh > $HOME/log/cron/django-retry-deferred.log 2>&1
+0 4 * * 4 $HOME/bin/django-cleanup-mailer-messagelog.sh > $HOME/log/cron/django-cleanup-mailer-messagelog.log 2>&1
