@@ -65,11 +65,11 @@ EXTERNAL_APPS = [
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
 
-    'django_extensions',
     'admin_honeypot',
     'compressor',
     'contact_form',
     'debug_toolbar',
+    'django_extensions',
     'django_libs',
     'feedback_form',
     'generic_positions',
