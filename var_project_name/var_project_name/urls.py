@@ -35,7 +35,8 @@ if settings.DEBUG is False and settings.SANDBOX is True:
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns += patterns('',
+    urlpatterns += patterns(
+        '',
         url(r'^__debug__/', include(debug_toolbar.urls)),
     )
 
