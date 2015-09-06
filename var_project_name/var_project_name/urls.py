@@ -7,7 +7,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 
 from cms.sitemaps import CMSSitemap
-from django_libs.views import RapidPrototypingView, UpdateSessionAJAXView
+from django_libs.views import UpdateSessionAJAXView
 
 from .views import AJAXnonAJAXLoginView
 
