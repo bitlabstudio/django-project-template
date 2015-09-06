@@ -18,7 +18,7 @@
 <form method="POST" action="{% url 'account_login' %}">
     {% csrf_token %}
     {% if form.non_field_errors %}
-        <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+        {{ form.non_field_errors }}
     {% endif %}
     {% for field in form %}
         {% include "django_libs/partials/form_field.html" %}
