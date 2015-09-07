@@ -1,6 +1,7 @@
 """URLs for the var_project_name project."""
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -23,7 +24,7 @@ if settings.DEBUG is False and settings.SANDBOX is True:
     # If you want to set DEBUG=False on your local machine, Django would no
     # longer serve static files and you would have to setup Apache or Nginx.
     # This hack allows Django to serve staticfiles (which is slow and insecure)
-    urlpatterns += patterns(
+    urlpatterns += i18n_patterns(
         '',
         (r'^404/$', 'django.views.defaults.page_not_found'),
         (r'^500/$', 'django.views.defaults.server_error'),
@@ -35,12 +36,12 @@ if settings.DEBUG is False and settings.SANDBOX is True:
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns += patterns(
+    urlpatterns += i18n_patterns(
         '',
         url(r'^__debug__/', include(debug_toolbar.urls)),
     )
 
-urlpatterns += patterns(
+urlpatterns += i18n_patterns(
     '',
     url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {
         'sitemaps': {
