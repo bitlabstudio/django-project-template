@@ -72,6 +72,14 @@
     </div>
 </header>
 
+{% if messages %}
+	<div class="container">
+		{% for message in messages %}
+			<div>{{ message|safe }}</div>
+		{% endfor %}
+    </div>
+{% endif %}
+
 {% block main_container %}
 <div class="container">
     <div class="row">
