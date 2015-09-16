@@ -1,0 +1,8 @@
+{% extends "email/base.html" %}
+{% load i18n %}
+
+{% block headline %}{% trans "Email subject" %}{% endblock %}
+
+{% block content %}
+    <p>{% blocktrans %}Bla bla bla. Make sure to add styles to EVERY html tag.{% endblocktrans %}</p>
+{% endblock %}
