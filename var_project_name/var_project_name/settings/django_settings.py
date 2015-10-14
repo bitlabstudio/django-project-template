@@ -1,6 +1,8 @@
 """Django settings for the ``var_project_name`` project."""
 import os
 
+from django.contrib import messages
+
 from django_libs.settings.django_settings import IGNORABLE_404_URLS as LIBS_IGNORABLE_404_URLS  # NOQA
 from django_libs.settings.django_settings import IGNORABLE_404_USER_AGENTS  # NOQA
 
@@ -104,6 +106,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'cms.context_processors.cms_settings',
     'var_project_name.context_processors.project_settings',
 )
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-error',
+}
 
 ROOT_URLCONF = 'var_project_name.urls'
 

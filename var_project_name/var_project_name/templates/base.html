@@ -75,7 +75,10 @@
 {% if messages %}
     <div class="container">
         {% for message in messages %}
-            <div>{{ message|safe }}</div>
+            <div class="alert {{ message.tags }} fade in">
+                <button class="close" data-dismiss="alert">×</button>
+                {{ message|safe }}
+            </div>
         {% endfor %}
     </div>
 {% endif %}

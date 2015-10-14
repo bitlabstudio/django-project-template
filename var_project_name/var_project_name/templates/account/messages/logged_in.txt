@@ -1,5 +1,3 @@
 {% load account i18n %}
 {% user_display user as name %}
-<div class="alert alert-info">
-    {% blocktrans %}Successfully signed in.{% endblocktrans %}
-</div>
+{% blocktrans %}Successfully signed in.{% endblocktrans %}
