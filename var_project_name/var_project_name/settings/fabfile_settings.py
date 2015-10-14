@@ -43,7 +43,7 @@ SYNTAX_CHECK_EXCLUDES = [
 
 # Those files/dirs will be excluded in the coverage report
 COVERAGE_EXCLUDES = (
-    '*__init__*,*manage*,*wsgi*,*urls*,*/settings/*,*/migrations/*,*/tests/*,'
+    '*__init__*,*wsgi*,*urls*,*/settings/*,*/migrations/*,*/tests/*,'
     '*admin*')
 
 
