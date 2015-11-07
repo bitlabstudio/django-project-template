@@ -92,7 +92,7 @@ function init_form(form) {
 				$('<div class="alert alert-danger">' + gettext("This browser doesn't seem to support the 'files' property of file inputs.") + '</div>').insertAfter(input);
 			}
 			else if (!input[0].files[0]) {
-				input.parents('div').find('.alert').remove();
+				input.parents('.form-group').find('.alert').remove();
 			}
 			else {
 				file = input[0].files[0];
@@ -104,7 +104,7 @@ function init_form(form) {
 						input[0]
 					);
 				} else {
-					input.parents('div').find('.alert').remove();
+					input.parents('.form-group').find('.alert').remove();
 				}
 			}
 		}
