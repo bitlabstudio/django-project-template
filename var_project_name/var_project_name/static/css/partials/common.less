@@ -6,6 +6,17 @@ body {
 .checkbox {
     ul {
         .list-unstyled;
+        label {
+            position: relative;
+            input[type="radio"], input[type="checkbox"] {
+                margin-left: -20px;
+                position: absolute;
+                top: -2px;
+            }
+        }
+        li {
+            margin-bottom: 10px;
+        }
     }
 }
 
