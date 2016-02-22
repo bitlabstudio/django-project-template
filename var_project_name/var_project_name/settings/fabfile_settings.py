@@ -115,4 +115,5 @@ def get_fab_setting(setting_name):
             get_fab_setting('SERVER_PROJECT_ROOT'), PROJECT_NAME)
 
 
-FAB_SETTING = lambda x: get_fab_setting(x)
+def FAB_SETTING(x):
+    return get_fab_setting(x)
