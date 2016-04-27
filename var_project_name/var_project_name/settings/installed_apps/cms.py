@@ -8,3 +8,4 @@ CMS_TEMPLATES = (
 )
 TEXT_SAVE_IMAGE_FUNCTION = \
     'cmsplugin_filer_image.integrations.ckeditor.create_image_plugin'
+CMS_TOOLBAR_ANONYMOUS_ON = False

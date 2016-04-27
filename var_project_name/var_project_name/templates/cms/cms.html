@@ -2,15 +2,15 @@
 {% load cms_tags %}
 
 {% block head_title %}
-    {% page_attribute "page_title" as page_title %}
-    {% if page_title %}
-        {{ page_title }}
-    {% else %}
-        {% page_attribute "title" %}
-    {% endif %}
+  {% page_attribute "page_title" as page_title %}
+  {% if page_title %}
+    {{ page_title }}
+  {% else %}
+    {% page_attribute "title" %}
+  {% endif %}
 {% endblock %}
 
 {% block main %}
-<h1>{% page_attribute "title" %}</h1>
-{% placeholder "01_main" %}
+  <h1>{% page_attribute "title" %}</h1>
+  {% placeholder "01_main" %}
 {% endblock %}

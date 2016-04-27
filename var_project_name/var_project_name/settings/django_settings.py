@@ -7,6 +7,7 @@ from django_libs.settings.django_settings import IGNORABLE_404_URLS as LIBS_IGNO
 from django_libs.settings.django_settings import IGNORABLE_404_USER_AGENTS  # NOQA
 
 from .base_settings import DJANGO_PROJECT_ROOT
+from .local_settings import DEBUG
 
 
 IGNORABLE_404_URLS = LIBS_IGNORABLE_404_URLS
@@ -68,13 +69,6 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader',
-)
-
 MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
@@ -92,20 +86,40 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.language.LanguageCookieMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.request',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.contrib.messages.context_processors.messages',
-    'django_libs.context_processors.analytics',
-    'allauth.account.context_processors.account',
-    'allauth.socialaccount.context_processors.socialaccount',
-    'sekizai.context_processors.sekizai',
-    'cms.context_processors.cms_settings',
-    'var_project_name.context_processors.project_settings',
-)
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [os.path.join(DJANGO_PROJECT_ROOT, 'var_project_name/templates')],
+    'OPTIONS': {
+        'debug': DEBUG,
+        'loaders': (
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+            'django.template.loaders.eggs.Loader',
+        ),
+        'context_processors': (
+            'django.contrib.auth.context_processors.auth',
+            'django.template.context_processors.i18n',
+            'django.template.context_processors.request',
+            'django.template.context_processors.media',
+            'django.template.context_processors.static',
+            'django.contrib.messages.context_processors.messages',
+            'django_libs.context_processors.analytics',
+            'sekizai.context_processors.sekizai',
+            'cms.context_processors.cms_settings',
+            'var_project_name.context_processors.project_settings',
+        )
+    }
+}]
+
+MIGRATION_MODULES = {
+    # Remove these modules, after installing cmsplugin-filer>=1.1
+    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
+    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
+    'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
+    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
+    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
+    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
+}
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'debug',
@@ -119,14 +133,6 @@ ROOT_URLCONF = 'var_project_name.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'var_project_name.wsgi.application'
-
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates"
-    # or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(DJANGO_PROJECT_ROOT, 'var_project_name/templates'),
-)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -161,7 +167,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(DJANGO_PROJECT_ROOT, 'debugger.log'),
-            'maxBytes': '16777216',  # 16megabytes
+            'maxBytes': 16777216,  # 16megabytes
         },
     },
     'loggers': {
@@ -184,16 +190,4 @@ LOGGING = {
             'propagate': False,
         },
     }
-}
-
-# A dictionary specifying the package where migration modules can be found
-MIGRATION_MODULES = {
-    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
-    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
-    'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
-    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
-    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
-    'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
-    'filer': 'filer.migrations_django',
 }

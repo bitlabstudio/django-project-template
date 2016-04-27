@@ -6,8 +6,7 @@ from .base_settings import DJANGO_PROJECT_ROOT
 
 DEBUG = True
 SANDBOX = True
-TEMPLATE_DEBUG = DEBUG
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'http'
+DEFAULT_HTTP_PROTOCOL = 'http'
 DISABLED_APPS = []
 
 # Set this to false on PROD / works with `grunt watch` on local development.
@@ -17,10 +16,10 @@ LIVERELOAD = True
 LOCAL_COMPRESS_ENABLED = False
 
 # For local development
-# ADMIN_URL = 'admin/'
+ADMIN_URL = 'admin/'
 
 # For your server
-ADMIN_URL = 'admin-XXXX/'
+# ADMIN_URL = 'admin-XXXX/'
 
 # Needed by debug_toolbar. Set it to None to disable the toolbar.
 INTERNAL_IPS = ('127.0.0.1',)
@@ -55,7 +54,7 @@ DATABASES = {
 # LOCAL_PG_ADMIN_ROLE = 'username'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+# See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 
 # On your server, it should look like this:
 # ALLOWED_HOSTS = ['IP', 'example.com', 'www.example.com']
@@ -70,7 +69,8 @@ MEDIA_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../var_project_name_media')
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(DJANGO_PROJECT_ROOT, '../../var_project_name_static')
+STATIC_ROOT = os.path.join(DJANGO_PROJECT_ROOT,
+                           '../../var_project_name_static')
 # STATIC_ROOT = '/home/django/project_assets/static/'
 
 # Make this unique, and don't share it with anybody.

@@ -70,7 +70,6 @@ EXTERNAL_APPS = [
     'compressor',
     'contact_form',
     'debug_toolbar',
-    'django_extensions',
     'django_libs',
     'feedback_form',
     'generic_positions',

@@ -3,44 +3,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block head_title %}var_project_name{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}{% endblock %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="msapplication-config" content="none"/>
-    {% compress css %}
-        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" media="screen">
-        <link href="{% static "css/libs/bootstrap3-modal.css" %}" rel="stylesheet" media="screen">
-        <link href="{% static "css/libs/bootstrap-datetimepicker.min.css" %}" rel="stylesheet" media="screen">
-        <link href="{% static "css/libs/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" />
-        <link href="{% static "user_media/css/libs/jquery.fileupload-ui.css" %}" rel="stylesheet" media="screen">
-        <link href="{% static "user_media/css/libs/jquery.Jcrop.css" %}" rel="stylesheet" media="screen">
-        <link href="{% static "feedback_form/css/feedback_form.css" %}" type="text/css" media="all" rel="stylesheet" />
-        <link href="{% static "contact_form/css/contact_form.css" %}" type="text/css" media="all" rel="stylesheet" />
-        {% comment %}}<link href="{% static "css/warnings.css" %}" rel="stylesheet" media="screen">{% endcomment %}
-    {% endcompress %}
-    {% block extrahead %}{% endblock %}
-    {% render_block "css" %}
+  <title>{% block head_title %}var_project_name{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% endblock %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="msapplication-config" content="none"/>
+  {% compress css %}
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" media="screen">
+    <link href="{% static "css/libs/bootstrap3-modal.css" %}" rel="stylesheet" media="screen">
+    <link href="{% static "css/libs/bootstrap-datetimepicker.min.css" %}" rel="stylesheet" media="screen">
+    <link href="{% static "css/libs/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" />
+    <link href="{% static "user_media/css/libs/jquery.fileupload-ui.css" %}" rel="stylesheet" media="screen">
+    <link href="{% static "user_media/css/libs/jquery.Jcrop.css" %}" rel="stylesheet" media="screen">
+    <link href="{% static "feedback_form/css/feedback_form.css" %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static "contact_form/css/contact_form.css" %}" type="text/css" media="all" rel="stylesheet" />
+    {% comment %}}<link href="{% static "css/warnings.css" %}" rel="stylesheet" media="screen">{% endcomment %}
+  {% endcompress %}
+  {% block extrahead %}{% endblock %}
+  {% render_block "css" %}
 
-    <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico" %}">
-    <!-- https://developer.apple.com/library/safari/documentation/appleapplications/reference/safariwebcontent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-    <link rel="apple-touch-icon" href="{% static "touch-icon-iphone.png" %}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{% static "touch-icon-ipad.png" %}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{% static "touch-icon-iphone-retina.png" %}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{% static "touch-icon-ipad-retina.png" %}">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+  <!-- https://developer.apple.com/library/safari/documentation/appleapplications/reference/safariwebcontent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+  <link rel="apple-touch-icon" href="{% static "touch-icon-iphone.png" %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static "touch-icon-ipad.png" %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static "touch-icon-iphone-retina.png" %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static "touch-icon-ipad-retina.png" %}">
 
-    <!-- Facebook Open Graph data -->
-    <meta property="fb:app_id" content="your-app-id" />
-    <meta property="og:title" content="{% block og_title %}var_project_name{% endblock %}" />
-    <meta property="og:description" content="{% block og_description %}{% endblock %}" />
-    <meta property="og:site_name" content="{% block og_site_name %}var_project_name{% endblock %}" />
-    <meta property="og:image" content="{% block og_image %}{% endblock %}" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
-    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+  <!-- Facebook Open Graph data -->
+  <meta property="fb:app_id" content="your-app-id" />
+  <meta property="og:title" content="{% block og_title %}var_project_name{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}{% endblock %}" />
+  <meta property="og:site_name" content="{% block og_site_name %}var_project_name{% endblock %}" />
+  <meta property="og:image" content="{% block og_image %}{% endblock %}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:url" content="{{ request.build_absolute_uri }}" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
         <script src="{% static "js/libs/html5shiv.js" %}"></script>
         <script src="{% static "js/libs/respond.min.js" %}"></script>
         <script src="{% static "js/libs/modernizr.js" %}"></script>
@@ -51,46 +51,46 @@
 {% feedback_form %}
 {% include "partials/noscript_warning.html" %}
 <header class="navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="sr-only">{% trans "Toggle navigation" %}</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">var_project_name</a>
-        </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="/">{% trans "Home" %}</a>
-                </li>
-                {% show_menu 0 100 100 100 %}
-            </ul>
-        </nav>
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">{% trans "Toggle navigation" %}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">var_project_name</a>
     </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/">{% trans "Home" %}</a>
+        </li>
+        {% show_menu 0 100 100 100 %}
+      </ul>
+    </nav>
+  </div>
 </header>
 
 {% if messages %}
-    <div class="container">
-        {% for message in messages %}
-            <div class="alert {{ message.tags }} fade in">
-                <button class="close" data-dismiss="alert">×</button>
-                {{ message|safe }}
-            </div>
-        {% endfor %}
-    </div>
+  <div class="container">
+    {% for message in messages %}
+      <div class="alert {{ message.tags }} fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        {{ message|safe }}
+      </div>
+    {% endfor %}
+  </div>
 {% endif %}
 
 {% block main_container %}
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            {% block main %}{% endblock %}
-        </div>
+      <div class="col-md-12">
+        {% block main %}{% endblock %}
+      </div>
     </div>
-</div>
+  </div>
 {% endblock %}
 
 <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
@@ -99,25 +99,25 @@
 <script src="{% static "js/libs/jquery-1.9.1.js" %}"></script>
 <script src="{% static "js/libs/jquery-ui-1.10.3.custom.min.js" %}"></script>
 {% render_block "js" %}
-<script src="{% url "django.views.i18n.javascript_catalog" %}"></script>
+<script src="{% url "javascript_catalog" %}"></script>
 
 {% comment %}Libs that will change and should be compressed{% endcomment %}
 {% compress js %}
-    <script src="{% static "js/libs/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/libs/bootstrap-datetimepicker.min.js" %}"></script>
-    <script src="{% static "js/libs/bootstrap3-modal.js" %}"></script>
-    <script src="{% static "js/libs/bootstrap3-modalmanager.js" %}"></script>
-    <script src="{% static "js/libs/spin.min.js" %}"></script>
-    <script src="{% static "js/libs/jquery.spin.js" %}"></script>
-    <script src="{% static "django_libs/js/modals.js" %}"></script>
-    <script src="{% static "js/libs/holder.js" %}"></script>
-    <script src="{% static "js/libs/jquery.autogrow-textarea.js" %}"></script>
-    {% include "user_media/partials/image_upload_scripts.html" %}
-    <script src="{% static "django_libs/js/getcookie.js" %}"></script>
-    <script src="{% static "user_media/js/libs/jquery.Jcrop.js" %}"></script>
-    <script type="text/javascript" src="{% static "feedback_form/js/feedback_form.js" %}"></script>
-    <script src="{% static "js/warnings.js" %}"></script>
-    <script src="{% static "js/general.js" %}"></script>
+  <script src="{% static "js/libs/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/libs/bootstrap-datetimepicker.min.js" %}"></script>
+  <script src="{% static "js/libs/bootstrap3-modal.js" %}"></script>
+  <script src="{% static "js/libs/bootstrap3-modalmanager.js" %}"></script>
+  <script src="{% static "js/libs/spin.min.js" %}"></script>
+  <script src="{% static "js/libs/jquery.spin.js" %}"></script>
+  <script src="{% static "django_libs/js/modals.js" %}"></script>
+  <script src="{% static "js/libs/holder.js" %}"></script>
+  <script src="{% static "js/libs/jquery.autogrow-textarea.js" %}"></script>
+  {% include "user_media/partials/image_upload_scripts.html" %}
+  <script src="{% static "django_libs/js/getcookie.js" %}"></script>
+  <script src="{% static "user_media/js/libs/jquery.Jcrop.js" %}"></script>
+  <script type="text/javascript" src="{% static "feedback_form/js/feedback_form.js" %}"></script>
+  <script src="{% static "js/warnings.js" %}"></script>
+  <script src="{% static "js/general.js" %}"></script>
 {% endcompress %}
 
 {% comment %}Extra js should not be compressed{% endcomment %}
@@ -127,7 +127,7 @@
 {% block extrascript %}{% endblock %}
 
 {% if LIVERELOAD %}
-    <script src="//localhost:35729/livereload.js"></script>
+  <script src="//localhost:35729/livereload.js"></script>
 {% endif %}
 </body>
 </html>

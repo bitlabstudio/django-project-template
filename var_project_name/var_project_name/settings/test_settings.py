@@ -1,15 +1,6 @@
 # flake8: noqa
 """Settings to be used for running tests."""
-import logging
-
 from ..settings import *
-
-
-INSTALLED_APPS.append('django_nose')
-
-
-logging.getLogger("factory").setLevel(logging.WARN)
-
 
 DATABASES = {
     "default": {

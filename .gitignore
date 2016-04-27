@@ -1,14 +1,10 @@
 *.dump
 *.pyc
 *.sql
-*.wpr
-.ropeproject
 .coverage
 coverage/
 db.sqlite
-debugger.log
-docs/build/
-docs/source/api/
 fab_settings.py
 local_settings.py
 locale
+debugger.log

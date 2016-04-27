@@ -1,4 +1,6 @@
 """Settings for the ``easy_thumbnails`` app."""
+THUMBNAIL_BASEDIR = 'thumbs'
+THUMBNAIL_CACHE_DIMENSIONS = True
 THUMBNAIL_PROCESSORS = (
     # 'user_media.processors.crop_box',
     'easy_thumbnails.processors.colorspace',
