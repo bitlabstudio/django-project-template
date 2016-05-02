@@ -73,7 +73,6 @@ EXTERNAL_APPS = [
     'django_libs',
     'feedback_form',
     'generic_positions',
-    'honeypot_signals',
     'mailer',
     'user_media',
 ]
