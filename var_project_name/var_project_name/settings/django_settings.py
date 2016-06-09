@@ -147,10 +147,10 @@ LOGGING = {
             '()': 'django.utils.log.RequireDebugFalse'
         },
         'filter_ignorable_404_urls': {
-            '()': 'django_libs.utils_log.FilterIgnorable404URLs'
+            '()': 'django_libs.utils.log.FilterIgnorable404URLs'
         },
         'add_current_user': {
-            '()': 'django_libs.utils_log.AddCurrentUser'
+            '()': 'django_libs.utils.log.AddCurrentUser'
         },
     },
     'handlers': {
