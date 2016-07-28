@@ -127,6 +127,26 @@ $(document).ready(function() {
 	});
     // Use this in in the template that has a carousel slider
     // init_carousel($('[data-class="carousel"]'));
+    
+    // Detect unsaved changes
+    if ($('form[data-class="detect-changes"]').length) {
+    	var unsaved = false;
+	$('form[data-class="detect-changes"]').each(function () {
+	    var form = $(this);
+	    form.on('change keyup', 'input, textarea, select', function () {
+	        unsaved = true;
+	    });
+	    form.submit(function() {
+	        unsaved = false;
+	    });
+	});
+
+        $(window).bind('beforeunload', function () {
+            if (unsaved) {
+                return gettext("You have unsaved changes on this page. Do you want to leave this page and discard your changes?");
+            }
+        });
+    }
 });
 
 // If objects are added to the DOM after document ready.
