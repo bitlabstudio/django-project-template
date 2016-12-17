@@ -21,6 +21,9 @@ ADMIN_URL = 'admin/'
 # For your server
 # ADMIN_URL = 'admin-XXXX/'
 
+# Used for fabfile
+# PEM_KEY_DIR = '~/.ssh/var_project_name.pem'
+
 # Needed by debug_toolbar. Set it to None to disable the toolbar.
 INTERNAL_IPS = ('127.0.0.1',)
 
