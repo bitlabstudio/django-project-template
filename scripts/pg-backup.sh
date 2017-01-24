@@ -12,6 +12,6 @@ BACKUPS=`expr $BACKUPS - 1`
 done
 DATE=`date +%Y%m%d%H%M%S`
 rm -f $BACKUPFOLDER/.pgdump-${DATE}._INPROGRESS
-pg_dump -c -Fc -O -U $DBUSER -f $BACKUPFOLDER/.pgdump-${DATE}._INPROGRESS
+pg_dump -c -Fc -O -U $DBUSER $DBNAME -f $BACKUPFOLDER/.pgdump-${DATE}._INPROGRESS
 mv -f $BACKUPFOLDER/.pgdump-${DATE}._INPROGRESS $BACKUPFOLDER/pgdump-${DATE}
 exit 0
