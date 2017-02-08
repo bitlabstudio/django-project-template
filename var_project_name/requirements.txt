@@ -1,5 +1,5 @@
-Django==1.9.5
-django-libs==1.67.4
+Django==1.10.5
+django-libs==1.67.9
 django-mailer==1.1
 django-admin-honeypot==1.0.0
 django-allauth==0.25.2
@@ -15,17 +15,21 @@ django-cms==3.2.5
 djangocms-text-ckeditor==2.9.2
 
 # django-filer related
-django-filer==1.2.0
+django-filer==1.2.6
 cmsplugin-filer==1.0.1
 
 # =============================================================================
 # Useful packages for local development
 # =============================================================================
+# If you run into issues installing cryptography, export the following:
+# export LDFLAGS="-L/usr/local/opt/openssl/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 fabric3==1.10.2.post3
 Pillow==3.2.0
 coverage==4.0.3
 django-debug-toolbar==1.4
-django-development-fabfile==2.14.5
+django-development-fabfile==2.14.13
 mixer==5.5.7
 flake8==2.5.4
 ipdb==0.9.3
